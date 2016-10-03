@@ -73,24 +73,8 @@ while ($r = mysql_fetch_array($q)) {
                 <h2>
                     Asisten Laboratorium 
                     <?php
-                    if ($_GET['kategori'] == "PEMDAS") {
-                        echo 'Pemrograman Dasar';
-                    } else if ($_GET['kategori'] == "ORKOM") {
-                        echo 'Organisasi & Arsitektur Komputer';
-                    } else if ($_GET['kategori'] == "PBD") {
-                        echo 'Pemrograman Basis Data';
-                    } else if ($_GET['kategori'] == "PRC") {
-                        echo 'Pemrograman Robot Cerdas';
-                    } else if ($_GET['kategori'] == "JARKOM") {
-                        echo 'Jaringan Komputer';
-                    } else if ($_GET['kategori'] == "REKWEB") {
-                        echo 'Rekayasa Web';
-                    } else if ($_GET['kategori'] == "JST") {
-                        echo 'Jaringan Syaraf Tiruan';
-                    } else if ($_GET['kategori'] == "BASDAT") {
-                        echo 'Basis Data';
-                    } else if ($_GET['kategori'] == "PBO") {
-                        echo 'Pemrograman Berorientasi Objek';
+                    if ($_GET['kategori'] == "FISDAS") {
+                        echo 'Fisika Dasar';
                     }
                     echo ' Periode ' . $_GET['periode'];
                     ?>

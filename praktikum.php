@@ -8,7 +8,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Praktikum | Lab IF</title>
+        <title>Praktikum | Lab Fisika</title>
 
         <!-- core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@ session_start();
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>
         <![endif]-->       
-        <link rel="shortcut icon" href="images/ico/icon.png">
+        <link rel="shortcut icon" href="images/ico/icon.ico">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -46,136 +46,25 @@ session_start();
                 <div class="center wow fadeInDown">
                     <h2>Praktikum</h2>
                     <p class="lead">
-                        Halaman informasi kegiatan praktikum Laboratorium Teknik Informatika ITENAS
+                        Halaman informasi kegiatan praktikum Laboratorium Fisika ITENAS
                     </p>
                 </div>
                 <div class="row">
 
                     <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('PEMDAS')">
+                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('FISDAS')">
                             <div class="media services-wrap wow fadeInDown">
                                 <div class="pull-left">
                                     <img class="img-responsive" src="images/services/services1.png">
                                 </div>
                                 <div class="media-body">
-                                    <h3 class="media-heading">PEMDAS</h3>
-                                    <p>Pemrograman <br> Dasar</p>
+                                    <h3 class="media-heading">FISDAS</h3>
+                                    <p>Fisika Dasar</p>
                                 </div>
                             </div>
                         </a>
                     </div>
 
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('ORKOM')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services2.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">ORKOM</h3>
-                                    <p>Organisasi & Arsitektur Komputer</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('PRC')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services3.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">PRC</h3>
-                                    <p>Pemrograman <br> Robot Cerdas</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>  
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('JARKOM')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services4.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">JARKOM</h3>
-                                    <p>Jaringan <br> Komuputer</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('REKWEB')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services5.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">REKWEB</h3>
-                                    <p>Rekayasa <br> Web</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('JST')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services6.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">JST</h3>
-                                    <p>Jaringan Syaraf <br> Tiruan</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>                                                
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('BASDAT')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services7.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">BASDAT</h3>
-                                    <p>Basis <br> Data</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>                                                
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('PBD')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services8.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">PBD</h3>
-                                    <p>Pemrograman <br> Basis Data</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>                                                
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('PBO')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services9.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">PBO</h3>
-                                    <p>Pemrograman <br> Berorientasi Objek</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>                                                
                 </div><!--/.row-->
             </div><!--/.container-->
         </section><!--/#services-->      

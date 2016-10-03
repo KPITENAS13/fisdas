@@ -19,7 +19,7 @@ $r3 = mysql_fetch_array($h3);
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo"></a>
+            <a class="navbar-brand" href="index.php"><img src="images/logo.ico" alt="logo"></a>
         </div>
 
         <div class="collapse navbar-collapse navbar-right">

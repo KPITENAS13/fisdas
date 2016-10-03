@@ -8,7 +8,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Jadwal Praktikum | Lab IF</title>
+        <title>Jadwal Praktikum | Lab Fisika</title>
 
         <!-- core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@ session_start();
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>
         <![endif]-->       
-        <link rel="shortcut icon" href="images/ico/icon.png">
+        <link rel="shortcut icon" href="images/ico/icon.ico">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -47,7 +47,7 @@ session_start();
             <div class="center wow fadeInDown">
                 <h2>Jadwal Praktikum</h2>
                 <p class="lead">
-                    Rangkaian kegiatan praktikum Laboratorium Teknik Informatika ITENAS
+                    Rangkaian kegiatan praktikum Laboratorium Fisika ITENAS
                 </p>
             </div>
             <div class="container">

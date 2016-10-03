@@ -8,7 +8,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Beranda | Lab IF</title>
+        <title>Beranda | Lab Fisika</title>
 
         <!-- core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@ session_start();
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>
         <![endif]-->       
-        <link rel="shortcut icon" href="images/ico/icon.png">
+        <link rel="shortcut icon" href="images/ico/icon.ico">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -79,8 +79,8 @@ session_start();
                             <div class="row slide-margin">
                                 <div class="col-sm-6">
                                     <div class="carousel-content">
-                                        <h1 class="animation animated-item-1">Praktikum Laboratorium Teknik Informatika</h1>
-                                        <h2 class="animation animated-item-2">Dapatkan informasi mengenai kegiatan praktikum yang diselenggarakan Program Studi Teknik Informatika</h2>
+                                        <h1 class="animation animated-item-1">Praktikum Laboratorium Fisika</h1>
+                                        <h2 class="animation animated-item-2">Dapatkan informasi mengenai kegiatan praktikum Fisika yang diselenggarakan</h2>
                                         <a class="btn-slide animation animated-item-3" href="praktikum.php">Menuju Halaman</a>
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@ session_start();
                             <div class="row slide-margin">
                                 <div class="col-sm-6">
                                     <div class="carousel-content">
-                                        <h1 class="animation animated-item-1">Monitoring Laboratoum Teknik Informatika</h1>
+                                        <h1 class="animation animated-item-1">Monitoring Laboratoum Fisika</h1>
                                         <h2 class="animation animated-item-2">Lihat keadaan Laboratorium secara langsung melalui video streaming</h2>
                                         <a class="btn-slide animation animated-item-3" href="monitoring.php">Menuju Halaman</a>
                                     </div>
@@ -148,7 +148,7 @@ session_start();
             <div class="container">
                 <div class="center wow fadeInDown">
                     <h2>Fitur</h2>
-                    <p class="lead">Berikut beberapa fitur yang dapat diakses melalui website Laboratorium Teknik Informatika ITENAS</p>
+                    <p class="lead">Berikut beberapa fitur yang dapat diakses melalui website Laboratorium Fisika ITENAS</p>
                 </div>
 
                 <div class="row">
@@ -210,7 +210,7 @@ session_start();
                 <div class="center wow fadeInDown">
                     <h2>Monitoring</h2>
                     <p class="lead">
-                        Menampilkan secara langsung keadaan ruangan Laboratorium Teknik Informatika ITENAS
+                        Menampilkan secara langsung keadaan ruangan Laboratorium Fisika ITENAS
                     </p>
                 </div>
 
@@ -220,11 +220,9 @@ session_start();
                             <img class="img-responsive" src="images/lab/lab_daskom.png" alt="">
                             <div class="overlay">
                                 <div class="recent-work-inner">
-                                    <h3><a href="#">Lab DasKom</a></h3>
+                                    <h3><a href="#">Kamera 1</a></h3>
                                     <p>
-                                        Praktikum : <br>
-                                        - Pemrograman Dasar <br>
-                                        - Organisasi & Arsitektur Komputer
+                                        
                                     </p>
                                     <a class="preview" href="http://10.243.114.103:8080/video" rel="prettyPhoto"><i class="fa fa-eye"></i> Mulai Streaming</a>
                                 </div> 
@@ -237,11 +235,9 @@ session_start();
                             <img class="img-responsive" src="images/lab/lab_multimedia.png" alt="">
                             <div class="overlay">
                                 <div class="recent-work-inner">
-                                    <h3><a href="#">Lab Multimedia</a></h3>
+                                    <h3><a href="#">Kamera 2</a></h3>
                                     <p>
-                                        Praktikum : <br>
-                                        - Pemrograman Robot Cerdas <br>
-                                        - Jaringan Syaraf Tiruan
+                                        
                                     </p>
                                     <a class="preview" href="images/lab/lab_jarkom.png" rel="prettyPhoto"><i class="fa fa-eye"></i> Mulai Streaming</a>
                                 </div> 
@@ -254,11 +250,9 @@ session_start();
                             <img class="img-responsive" src="images/lab/lab_jarkom.png" alt="">
                             <div class="overlay">
                                 <div class="recent-work-inner">
-                                    <h3><a href="#">Lab JarKom</a></h3>
+                                    <h3><a href="#">Kamera 3</a></h3>
                                     <p>
-                                        Praktikum : <br>
-                                        - Jaringan Komputer <br>
-                                        - Rekayasa Web
+                                        
                                     </p>
                                     <a class="preview" href="images/portfolio/full/item3.png" rel="prettyPhoto"><i class="fa fa-eye"></i> Mulai Streaming</a>
                                 </div> 
@@ -271,12 +265,9 @@ session_start();
                             <img class="img-responsive" src="images/lab/lab_daskom.png" alt="">
                             <div class="overlay">
                                 <div class="recent-work-inner">
-                                    <h3><a href="#">Lab BasDat</a></h3>
+                                    <h3><a href="#">Kamera 4</a></h3>
                                     <p>
-                                        Praktikum : <br>
-                                        - Basis Data <br>
-                                        - Pemrograman Basis Data <br>
-                                        - Pemrograman Berorientasi Objek
+                                        
                                     </p>
                                     <a class="preview" href="images/portfolio/full/item4.png" rel="prettyPhoto"><i class="fa fa-eye"></i> Mulai Streaming</a>
                                 </div> 
@@ -291,136 +282,25 @@ session_start();
             <div class="container">
                 <div class="center wow fadeInDown">
                     <h2>Praktikum</h2>
-                    <p class="lead">Informasi kegiatan praktikum Laboratorium Teknik Informatika ITENAS</p>
+                    <p class="lead">Informasi kegiatan praktikum Laboratorium Fisika ITENAS</p>
                 </div>
 
                 <div class="row">
 
                     <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('PEMDAS')">
+                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('FISDAS')">
                             <div class="media services-wrap wow fadeInDown">
                                 <div class="pull-left">
                                     <img class="img-responsive" src="images/services/services1.png">
                                 </div>
                                 <div class="media-body">
-                                    <h3 class="media-heading">PEMDAS</h3>
-                                    <p>Pemrograman <br> Dasar</p>
+                                    <h3 class="media-heading">FISDAS</h3>
+                                    <p>Fisika Dasar</p>
                                 </div>
                             </div>
                         </a>
                     </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('ORKOM')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services2.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">ORKOM</h3>
-                                    <p>Organisasi & Arsitektur Komputer</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('PRC')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services3.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">PRC</h3>
-                                    <p>Pemrograman <br> Robot Cerdas</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>  
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('JARKOM')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services4.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">JARKOM</h3>
-                                    <p>Jaringan <br> Komuputer</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('REKWEB')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services5.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">REKWEB</h3>
-                                    <p>Rekayasa <br> Web</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('JST')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services6.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">JST</h3>
-                                    <p>Jaringan Syaraf <br> Tiruan</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>                                                
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('BASDAT')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services7.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">BASDAT</h3>
-                                    <p>Basis <br> Data</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>                                                
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('PBD')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services8.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">PBD</h3>
-                                    <p>Pemrograman <br> Basis Data</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>                                                
-
-                    <div class="col-sm-6 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#LabModal" onclick="ChangeLab('PBO')">
-                            <div class="media services-wrap wow fadeInDown">
-                                <div class="pull-left">
-                                    <img class="img-responsive" src="images/services/services9.png">
-                                </div>
-                                <div class="media-body">
-                                    <h3 class="media-heading">PBO</h3>
-                                    <p>Pemrograman <br> Berorientasi Objek</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>                                                
+                    
                 </div><!--/.row-->
             </div><!--/.container-->
         </section><!--/#services-->

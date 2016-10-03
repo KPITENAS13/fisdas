@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            &copy; 2016 <a target="_blank" href="http://itenas.ac.id/" title="">ITENAS</a>. Teknik Informatika.
+            &copy; 2016 <a target="_blank" href="http://itenas.ac.id/" title="">ITENAS</a>. Laboratorium Fisika.
         </div>
         <div class="col-sm-6">
             <ul class="pull-right">

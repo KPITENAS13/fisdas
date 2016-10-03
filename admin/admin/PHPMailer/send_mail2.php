@@ -1,8 +1,8 @@
 <?php
-$email_penerima = $_POST['email'];
-$nama_penerima = $_POST['nama'];
-$isi_pesan = $_POST['isi'];
-$subjek = $_POST['subjek'];
+$email_penerima = $_GET['email'];
+$nama_penerima = $_GET['nama'];
+$isi_pesan = $_GET['isi'];
+$subjek = $_GET['subjek'];
 
 include('class.phpmailer.php');
 include('class.smtp.php');

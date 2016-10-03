@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Absensi | Lab IF</title>
+        <title>Absensi | Lab Fisika</title>
 
         <!-- core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>
         <![endif]-->       
-        <link rel="shortcut icon" href="images/ico/icon.png">
+        <link rel="shortcut icon" href="images/ico/icon.ico">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
             <div class="center wow fadeInDown">
                 <h2>Absensi Praktikum</h2>
                 <p class="lead">
-                    Persentasi kehadiran mahasiswa pada kegiatan Praktikum Laboratorium Teknik Informatika ITENAS
+                    Persentasi kehadiran mahasiswa pada kegiatan Praktikum Laboratorium Fisika ITENAS
                 </p>
             </div>
             <div class="container">
@@ -181,11 +181,7 @@ if (isset($_POST['submit'])) {
                                 <div class="controls">
                                     <select tabindex="1" data-placeholder="Select here.." class="form-control" name="praktikum" id="pra">
                                         <option value="">Select here..</option>
-                                        <option value="PEMDAS">Pemrograman Dasar</option>
-                                        <option value="ORKOM">Organisasi & Arsitektur Komputer</option>
-                                        <option value="JARKOM">Jaringan Komputer</option>
-                                        <option value="PRC">Pemrograman Robot Cerdas</option>
-                                        <option value="REKWEB">Rekayasa Web</option>
+                                        <option value="PEMDAS">Fisika Dasar</option>
                                     </select>
                                 </div>
                             </div>
@@ -199,6 +195,11 @@ if (isset($_POST['submit'])) {
                                         <option value="B">B</option>
                                         <option value="C">C</option>
                                         <option value="D">D</option>
+                                        <option value="E">E</option>
+                                        <option value="F">F</option>
+                                        <option value="G">G</option>
+                                        <option value="H">H</option>
+                                        <option value="I">I</option>                                        
                                     </select>
                                 </div>
                             </div>
