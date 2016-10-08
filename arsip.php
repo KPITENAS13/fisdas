@@ -152,7 +152,7 @@ session_start();
                         <div class="controls">
                             <select tabindex="1" data-placeholder="Select here.." class="form-control" name="praktikum" id="pra">
                                 <option value="">Select here..</option>
-                                <option value="PEMDAS">Fisika Dasar</option>
+                                <option value="FISDAS">Fisika Dasar</option>
                             </select>
                         </div>
                     </div>
@@ -220,11 +220,7 @@ session_start();
                         <div class="controls">
                             <select tabindex="1" data-placeholder="Select here.." class="form-control" name="praktikum" id="pra">
                                 <option value="">Select here..</option>
-                                <option value="PEMDAS">Pemrograman Dasar</option>
-                                <option value="ORKOM">Organisasi & Arsitektur Komputer</option>
-                                <option value="JARKOM">Jaringan Komputer</option>
-                                <option value="PRC">Pemrograman Robot Cerdas</option>
-                                <option value="REKWEB">Rekayasa Web</option>
+                                <option value="FISDAS">Fisika Dasar</option>
                             </select>
                         </div>
                     </div>

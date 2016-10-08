@@ -18,7 +18,7 @@ if (isset($_GET['update'])) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lab IF</title>
+        <title>Lab Fisika</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -63,7 +63,7 @@ if (isset($_GET['update'])) {
                             <div class="module">
                                 <div class="module-head" style="text-align: center">
                                     <h3>
-                                        Absensi Asisten Lab. Praktikum
+                                        Absensi Asisten Lab. Praktikum Fisika
                                     </h3>
                                 </div>
                                 <div class="module-body table">
@@ -76,9 +76,10 @@ if (isset($_GET['update'])) {
                                                         <div class="controls">
                                                             <select tabindex="1" data-placeholder="Select here.." class="span8" name="periode" id="per">
                                                                 <option value="">Select here..</option>
-                                                                <option value="1516">2015/2016</option>
                                                                 <option value="1617">2016/2017</option>
                                                                 <option value="1718">2017/2018</option>
+                                                                <option value="1817">2018/2019</option>
+                                                                <option value="1918">2019/2020</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -88,11 +89,7 @@ if (isset($_GET['update'])) {
                                                         <div class="controls">
                                                             <select tabindex="1" data-placeholder="Select here.." class="span8" name="praktikum" id="pra">
                                                                 <option value="">Select here..</option>
-                                                                <option value="PEMDAS">Pemrograman Dasar</option>
-                                                                <option value="ORKOM">Organisasi & Arsitektur Komputer</option>
-                                                                <option value="JARKOM">Jaringan Komputer</option>
-                                                                <option value="PRC">Pemrograman Robot Cerdas</option>
-                                                                <option value="REKWEB">Rekayasa Web</option>
+                                                                <option value="FISDAS">Fisika Dasar</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -106,6 +103,12 @@ if (isset($_GET['update'])) {
                                                                 <option value="B">B</option>
                                                                 <option value="C">C</option>
                                                                 <option value="D">D</option>
+                                                                <option value="E">E</option>
+                                                                <option value="F">F</option>
+                                                                <option value="G">G</option>
+                                                                <option value="H">H</option>
+                                                                <option value="I">I</option>
+                                                                
                                                             </select>
                                                         </div>
                                                     </div>

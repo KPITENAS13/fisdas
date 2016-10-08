@@ -21,16 +21,8 @@ if ($per == "1617") {
 }
 
 //praktikum
-if ($prak == "PEMDAS") {
-    $praktikum = "Pemrograman Dasar";
-} else if ($prak == "ORKOM") {
-    $praktikum = "Organisasi dan Arsitektur Komputer";
-} else if ($prak == "PRC") {
-    $praktikum = "Pemrograman Robot Cerdas";
-} else if ($prak == "JARKOM") {
-    $praktikum = "Jaringan Komputer";
-} else if ($prak == "REKWEB") {
-    $praktikum = "Rekayasa Web";
+if ($prak == "FISDAS") {
+    $praktikum = "Fisika Dasar";
 }
 
 for ($k = 0; $k < sizeof($asisten); $k++) {
