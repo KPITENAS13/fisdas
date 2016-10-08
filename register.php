@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Registrasi | Lab IF</title>
+        <title>Registrasi | Lab Fisika</title>
 
         <!-- core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -109,11 +109,10 @@
                             <div class="form-group">
                                 <label>ID *</label>
                                 <div class="input-group">
-                                    <input type="text" name="kode" class="form-control" required="required" maxlength="9" placeholder="Masukkan NID / NRP" autofocus>
+                                    <input type="text" name="kode" class="form-control" required="required" maxlength="9" placeholder="Masukkan NRP" autofocus>
                                     <span class="input-group-addon" data-toggle="popover" tabindex="1" data-trigger="hover" title="Informasi" data-content=" 
-                                        &bull;&nbsp;Panjang maksimal 9 digit.
-                                        &bull;&nbsp;NID (Dosen) : 4 digit. &nbsp;&nbsp;&nbsp;&nbsp;
-                                        &bull;&nbsp;NRP (Mahasiswa) : 9 digit." >
+                                        &bull;&nbsp;Panjang harus 9 digit
+                                        &bull;&nbsp;Mis. 112013001" >
                                         <span class="glyphicon glyphicon-info-sign"></span>
                                     </span>
                                 </div>
@@ -123,10 +122,9 @@
                                 <div class="input-group">
                                     <input type="password" name="sandi" class="form-control" required="required" maxlength="6" placeholder="Masukkan Kata Sandi">
                                     <span class="input-group-addon" data-toggle="popover" tabindex="2" data-trigger="hover" title="Informasi" data-content="
-                                        &bull;&nbsp;Kata sandi berupa angka.
-                                        &bull;&nbsp;Panjang harus 6 digit.
-                                        &bull;&nbsp;Nomor PIN (Mahasiswa).
-                                        &bull;&nbsp;Acak (Dosen).">
+                                        &bull;&nbsp;Kata sandi berupa angka
+                                        &bull;&nbsp;Panjang harus 6 digit
+                                        &bull;&nbsp;Nomor PIN KSM">
                                         <span class="glyphicon glyphicon-info-sign"></span>
                                     </span>
                                 </div>

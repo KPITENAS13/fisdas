@@ -1,6 +1,48 @@
 <?php
 
 $id = $_POST['kode'];
+
+$kdJur = substr($id, 0, 2);
+if($kdJur == "11"){
+    $jurusan = "Teknik Elektro";
+}
+if($kdJur == "12"){
+    $jurusan = "Teknik Mesin";
+}
+if($kdJur == "13"){
+    $jurusan = "Teknik Industri";
+}
+if($kdJur == "14"){
+    $jurusan = "Teknik Kimia";
+}
+if($kdJur == "15"){
+    $jurusan = "Teknik Informatika";
+}
+if($kdJur == "21"){
+    $jurusan = "Teknik Arsitektur";
+}
+if($kdJur == "22"){
+    $jurusan = "Teknik Sipil";
+}
+if($kdJur == "23"){
+    $jurusan = "Teknik Geodesi";
+}
+if($kdJur == "24"){
+    $jurusan = "Perencanaan Wilayah dan Kota";
+}
+if($kdJur == "25"){
+    $jurusan = "Teknik Lingkungan";
+}
+if($kdJur == "31"){
+    $jurusan = "Desain Interior";
+}
+if($kdJur == "32"){
+    $jurusan = "Desain Produk";
+}
+if($kdJur == "33"){
+    $jurusan = "Desain Komunikasi Visual";
+}
+
 $Lid = strlen($id);
 $sandi = $_POST['sandi'];
 $pass = $sandi;
@@ -56,10 +98,10 @@ if ($Lid == 9){     // Untuk Mahasiswa
 
     if ($uploadOk == 0) {
         echo "Sorry, your file was not uploaded.";
-} else {
+    } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             include "../koneksi.php";
-            mysql_query("INSERT INTO mahasiswa (id,pin,email,nama,jk,tgl_lahir,no_telp,alamat,foto) VALUES($id,$pass,'$_POST[email]','$_POST[nama]','$_POST[jk]','$_POST[tgl]','$_POST[telp]','$_POST[alamat]','$nama_file')");
+            mysql_query("INSERT INTO mahasiswa (id,pin,email,nama,jurusan,jk,tgl_lahir,no_telp,alamat,foto) VALUES($id,$pass,'$_POST[email]','$_POST[nama]','$jurusan','$_POST[jk]','$_POST[tgl]','$_POST[telp]','$_POST[alamat]','$nama_file')");
             $tanggal =  date("Y-m-d h:i:s", time()-18000);
             $isi = 'Anda telah terdaftar sebagai user pada sistem Laboratorium Teknik Informatika ITENAS';
             mysql_query("insert into pemberitahuan (tanggal,isi,user) values ('$tanggal', '$isi' , '$id')");
