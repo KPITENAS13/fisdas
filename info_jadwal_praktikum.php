@@ -61,16 +61,13 @@ session_start();
                                         Periode
                                     </th>
                                     <th>
-                                        Nama Praktikum
+                                        Program Studi
                                     </th>
                                     <th>
                                         Kelas
                                     </th>
                                     <th>
                                         Waktu
-                                    </th>
-                                    <th>
-                                        Koordinator
                                     </th>
                                 </tr>
                             </thead>
@@ -85,16 +82,13 @@ session_start();
                                         Periode
                                     </th>
                                     <th>
-                                        Nama Praktikum
+                                        Program Studi
                                     </th>
                                     <th>
                                         Kelas
                                     </th>
                                     <th>
                                         Waktu
-                                    </th>
-                                    <th>
-                                        Koordinator
                                     </th>
                                 </tr>
                             </tfoot>
