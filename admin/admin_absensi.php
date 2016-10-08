@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_POST['submit'])) {
     $per = $_POST['periode'];
-    $pra = $_POST['praktikum'];
+    $pra = $_POST['prodi'];
     $kls = $_POST['kelas'];
 }
 ?>
@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lab IF</title>
+        <title>Lab Fisika</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -22,14 +22,15 @@ if (isset($_POST['submit'])) {
               rel='stylesheet'>
         <script>
             function validateForm() {
+                //document.getElementById('periode');
                 var x = document.forms["myForm"]["periode"].value;
                 if (x==null || x=="") {
                     alert('Silakan Pilih Periode Terlebih Dahulu');
                     return false;
                 }
-                var y = document.forms["myForm"]["praktikum"].value;
+                var y = document.forms["myForm"]["prodi"].value;
                 if (y==null || y=="") {
-                    alert('Silakan Pilih Nama Praktikum Terlebih Dahulu');
+                    alert('Silakan Pilih Program Studi Terlebih Dahulu');
                     return false;
                 }
                 var z = document.forms["myForm"]["kelas"].value;
@@ -37,7 +38,34 @@ if (isset($_POST['submit'])) {
                     alert('Silakan Pilih Kelas Terlebih Dahulu');
                     return false;
                 }
-                
+            }
+            function validateForm2() {
+                //document.getElementById('periode');
+                var x = document.forms["form2"]["periode"].value;
+                if (x==null || x=="") {
+                    alert('Silakan Pilih Periode Terlebih Dahulu');
+                    return false;
+                }
+                var y = document.forms["form2"]["prodi"].value;
+                if (y==null || y=="") {
+                    alert('Silakan Pilih Program Studi Terlebih Dahulu');
+                    return false;
+                }
+                var z = document.forms["form2"]["kelas"].value;
+                if (z==null || z=="") {
+                    alert('Silakan Pilih Kelas Terlebih Dahulu');
+                    return false;
+                }
+                var a = document.forms["form2"]["pertemuan"].value;
+                if (a==null || a=="") {
+                    alert('Silakan Pilih Pertemuan Terlebih Dahulu');
+                    return false;
+                }
+                var b = document.forms["form2"]["fileToUpload"].value;
+                if (b==null || b=="") {
+                    alert('Silakan Pilih File Absensi Terlebih Dahulu');
+                    return false;
+                }
             }
         </script>
     </head>
@@ -95,23 +123,27 @@ if (isset($_POST['submit'])) {
                                                         <div class="controls">
                                                             <select tabindex="1" data-placeholder="Select here.." class="span8" name="periode" id="per">
                                                                 <option value="">Select here..</option>
-                                                                <option value="1516">2015/2016</option>
                                                                 <option value="1617">2016/2017</option>
                                                                 <option value="1718">2017/2018</option>
+                                                                <option value="1819">2018/2019</option>
+                                                                <option value="1920">2019/2020</option>
                                                             </select>
                                                         </div>
                                                     </div>
 
                                                     <div class="control-group">
-                                                        <label class="control-label" for="basicinput">Praktikum</label>
+                                                        <label class="control-label" for="basicinput">Program Studi</label>
                                                         <div class="controls">
-                                                            <select tabindex="1" data-placeholder="Select here.." class="span8" name="praktikum" id="pra">
+                                                            <select tabindex="1" data-placeholder="Select here.." class="span8" name="prodi" id="pra">
                                                                 <option value="">Select here..</option>
-                                                                <option value="PEMDAS">Pemrograman Dasar</option>
-                                                                <option value="ORKOM">Organisasi & Arsitektur Komputer</option>
-                                                                <option value="JARKOM">Jaringan Komputer</option>
-                                                                <option value="PRC">Pemrograman Robot Cerdas</option>
-                                                                <option value="REKWEB">Rekayasa Web</option>
+                                                                <option value="Teknik Elektro">Teknik Elektro</option>
+                                                                <option value="Teknik Mesin">Teknik Mesin</option>
+                                                                <option value="Teknik Industri">Teknik Industri</option>
+                                                                <option value="Teknik Informatika">Teknik Informatika</option>
+                                                                <option value="Teknik Kimia">Teknik Kimia</option>
+                                                                <option value="Teknik Arsitektur">Teknik Arsitektur</option>
+                                                                <option value="Teknik Geodesi">Teknik Geodesi</option>
+                                                                <option value="Teknik Sipil">Teknik Sipil</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -124,6 +156,12 @@ if (isset($_POST['submit'])) {
                                                                 <option value="A">A</option>
                                                                 <option value="B">B</option>
                                                                 <option value="C">C</option>
+                                                                <option value="D">D</option>
+                                                                <option value="E">E</option>
+                                                                <option value="F">F</option>
+                                                                <option value="G">G</option>
+                                                                <option value="H">H</option>
+                                                                <option value="I">I</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -137,8 +175,7 @@ if (isset($_POST['submit'])) {
                                             </div>
                                         </div>
                                     </div>
-                                    <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display"
-                                           width="100%">
+                                    <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	display" width="100%">
                                         <thead>
                                             <tr>
                                                 <th>
@@ -196,7 +233,7 @@ if (isset($_POST['submit'])) {
         <!--/.wrapper-->
         <div class="footer">
             <div class="container">
-                <b class="copyright">&copy; 2014 Edmin - EGrappler.com </b>All rights reserved.
+                <b class="copyright">&copy; 2016 Laboratorium Fisika
             </div>
         </div>
         <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
@@ -217,29 +254,33 @@ if (isset($_POST['submit'])) {
                     <h4 class="modal-title" id="myModalLabel">Informasi Praktikum</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal row-fluid" method="post" action="admin/upload_absensi.php" enctype="multipart/form-data">
+                    <form class="form-horizontal row-fluid" method="post" action="admin/upload_absensi.php" enctype="multipart/form-data" name="form2" onsubmit="return validateForm2()">
                         <div class="control-group">
                             <label class="control-label" for="basicinput">Periode</label>
                             <div class="controls">
                                 <select tabindex="1" data-placeholder="Select here.." class="span8" name="periode">
                                     <option value="">Select here..</option>
-                                    <option value="1516">2015/2016</option>
                                     <option value="1617">2016/2017</option>
                                     <option value="1718">2017/2018</option>
+                                    <option value="1819">2018/2019</option>
+                                    <option value="1920">2019/2020</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="control-group">
-                            <label class="control-label" for="basicinput">Praktikum</label>
+                            <label class="control-label" for="basicinput">Program Studi</label>
                             <div class="controls">
-                                <select tabindex="1" data-placeholder="Select here.." class="span8" name="praktikum">
+                                <select tabindex="1" data-placeholder="Select here.." class="span8" name="prodi">
                                     <option value="">Select here..</option>
-                                    <option value="PEMDAS">Pemrograman Dasar</option>
-                                    <option value="ORKOM">Organisasi & Arsitektur Komputer</option>
-                                    <option value="JARKOM">Jaringan Komputer</option>
-                                    <option value="PRC">Pemrograman Robot Cerdas</option>
-                                    <option value="REKWEB">Rekayasa Web</option>
+                                    <option value="Teknik Elektro">Teknik Elektro</option>
+                                    <option value="Teknik Mesin">Teknik Mesin</option>
+                                    <option value="Teknik Industri">Teknik Industri</option>
+                                    <option value="Teknik Informatika">Teknik Informatika</option>
+                                    <option value="Teknik Kimia">Teknik Kimia</option>
+                                    <option value="Teknik Arsitektur">Teknik Arsitektur</option>
+                                    <option value="Teknik Geodesi">Teknik Geodesi</option>
+                                    <option value="Teknik Sipil">Teknik Sipil</option>
                                 </select>
                             </div>
                         </div>
@@ -252,6 +293,12 @@ if (isset($_POST['submit'])) {
                                     <option value="A">A</option>
                                     <option value="B">B</option>
                                     <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="F">F</option>
+                                    <option value="G">G</option>
+                                    <option value="H">H</option>
+                                    <option value="I">I</option>
                                 </select>
                             </div>
                         </div>
