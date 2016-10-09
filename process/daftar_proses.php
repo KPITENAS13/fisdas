@@ -18,6 +18,9 @@ if($kdJur == "14"){
 if($kdJur == "15"){
     $jurusan = "Teknik Informatika";
 }
+if($kdJur == "16"){
+    $jurusan = "Sistem Informasi";
+}
 if($kdJur == "21"){
     $jurusan = "Teknik Arsitektur";
 }
@@ -41,8 +44,13 @@ if($kdJur == "32"){
 }
 if($kdJur == "33"){
     $jurusan = "Desain Komunikasi Visual";
+} 
+if (($kdJur != "11") || ($kdJur != "12") || ($kdJur != "13") || ($kdJur != "14") || ($kdJur != "15") || ($kdJur != "16")
+         || ($kdJur != "21") || ($kdJur != "22") || ($kdJur != "23") || ($kdJur != "24") || ($kdJur != "25")
+         || ($kdJur != "31") || ($kdJur != "32") || ($kdJur != "33")) {
+    $jurusan = "JURUSAN TIDAK DIKENALI";
 }
-
+    
 $Lid = strlen($id);
 $sandi = $_POST['sandi'];
 $pass = $sandi;
