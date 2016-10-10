@@ -19,7 +19,7 @@ session_start();
         include "koneksi/koneksi.php";
         //        menampilkan pesan jika ada pesan
         if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
-            echo '<div class="pesan" align="center">' . $_SESSION['pesan'] . '</div>';
+            echo '<div class="pesan" align="center"><p style="color:#FFF;font-size:16px">' . $_SESSION['pesan'] . '</p></div>';
         }
         //        mengatur session pesan menjadi kosong
         $_SESSION['pesan'] = '';
@@ -72,32 +72,12 @@ session_start();
                                                         <input type=hidden name=serial value='$r[serial_num]'>
                                                         <div class=control-group>
                                                             <div class=controls row-fluid>
-                                                                <input class=span8 type=text name=serial_num placeholder='Serial Number' value='$r[serial_num]'>
+                                                                <input class=span8 type=text name=serial_num placeholder='Serial Number' value='$r[serial_num]' readonly>
                                                             </div>
                                                         </div>
                                                         <div class=control-group>
                                                             <div class=controls row-fluid>
-                                                                <input class=span8 type=text name=nama placeholder='Nama' value='$r[nama]'>
-                                                            </div>
-                                                        </div>
-                                                        <div class=control-group>
-                                                            <div class=controls row-fluid> ";
-                                if ("$r[status]" == 'OK') {
-                                    echo"	
-                                                                        <select class=span8 name=status >
-                                                                        <option value=OK>$r[status]</option>								 						   	   
-                                                                        <option value=RUSAK>RUSAK</option>
-                                                                        </select> ";
-                                }
-
-                                if ("$r[status]" == 'RUSAK') {
-                                    echo"
-                                                                        <select class=span8 name=status >
-                                                                        <option value=RUSAK>$r[status]</option>								 						   	   
-                                                                        <option value=OK>OK</option>
-                                                                        </select> ";
-                                }
-                                echo"
+                                                                <input class=span8 type=text name=nama placeholder='Nama' value='$r[nama]' required>
                                                             </div>
                                                         </div>
                                                         <div class=control-group>
@@ -129,7 +109,7 @@ session_start();
                                                     <div class=module-foot>
                                                         <div class=control-group>
                                                             <div class=controls clearfix>
-                                                                <button type=submit class=btn-warning pull-right>Perbaharui</button>
+                                                                <button type=submit class='btn btn-danger' pull-right>Perbaharui</button>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -47,7 +47,7 @@ session_start();
             <div class="center wow fadeInDown">
                 <h2>Jadwal Penggunaan Lab</h2>
                 <p class="lead">
-                    Rangkaian kegiatan yang dilakukan di Laboratorium Teknik Informatika ITENAS
+                    Rangkaian kegiatan yang dilakukan di Laboratorium Fisika ITENAS
                 </p>
             </div>
             <div class="container">

@@ -47,7 +47,7 @@ session_start();
             <div class="center wow fadeInDown">
                 <h2>Peminjaman Alat Penelitian</h2>
                 <p class="lead">
-                    Peminjaman Alat Inventaris Untuk Penelitian Laboratorium Teknik Informatika ITENAS
+                    Peminjaman Alat Inventaris Untuk Penelitian Laboratorium Fisika ITENAS
                 </p>
             </div>
             <div class="row">

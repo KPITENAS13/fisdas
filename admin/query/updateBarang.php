@@ -4,9 +4,7 @@ session_start();
 $Date = date("Y-m-d");
 $Time = gmdate("H:i:s",time()+60*60*7);
 mysql_query("UPDATE barang SET 
-serial_num='$_POST[serial_num]',
 nama='$_POST[nama]',
-status='$_POST[status]',
 developer='$_POST[developer]',
 lokasi='$_POST[lokasi]',
 type='$_POST[type]', 

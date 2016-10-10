@@ -19,7 +19,7 @@ session_start();
         include "koneksi/koneksi.php";
         //        menampilkan pesan jika ada pesan
         if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
-            echo '<div class="pesan" align="center">' . $_SESSION['pesan'] . '</div>';
+            echo '<div class="pesan" align="center"><p style="color:#FFF;font-size:16px">' . $_SESSION['pesan'] . '</p></div>';
         }
         //        mengatur session pesan menjadi kosong
         $_SESSION['pesan'] = '';
@@ -108,7 +108,7 @@ session_start();
                                                         <td align=center>$stat</td>
                                                         <td align=center>$r[tgl_pinjam]</td>
                                                         <td align=center>$r[kode_barang]</td>
-                                                        <td align=center><a href=AlatDikembalikan.php?kode_pinjam=$r[id_peminjaman]&kode_barang=$r[kode_barang]><button class=btn-warning>Proses</button></a></td>
+                                                        <td align=center><a href=AlatDikembalikan.php?kode_pinjam=$r[id_peminjaman]&kode_barang=$r[kode_barang]><button class='btn btn-danger'>Proses</button></a></td>
                                                     </tr>
                                                 </form>";
                                             }

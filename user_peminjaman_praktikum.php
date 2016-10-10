@@ -8,7 +8,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Peminjaman Praktikum | Lab IF</title>
+        <title>Peminjaman Praktikum | Lab Fisika</title>
 
         <!-- core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +47,7 @@ session_start();
             <div class="center wow fadeInDown">
                 <h2>Peminjaman Alat Praktikum</h2>
                 <p class="lead">
-                    Peminjaman Alat Inventaris Untuk Praktikum Laboratorium Teknik Informatika ITENAS
+                    Peminjaman Alat Inventaris Untuk Praktikum Laboratorium Fisika ITENAS
                 </p>
             </div>
             <div class="row">

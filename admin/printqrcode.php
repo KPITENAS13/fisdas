@@ -92,7 +92,7 @@ session_start();
                                                         <td align=center>$r[model]</td>
                                                         <td align=center>$r[no_pelabelan]</td>
                                                         <td align=center>
-                                                            <a href='gen-qrcode.php?serial=$r[serial_num]'><button class='btn btn-warning pull-right'>Generate</button></a>
+                                                            <a href='gen-qrcode.php?serial=$r[serial_num]'><button class='btn btn-danger pull-right'>Generate</button></a>
 							</td>
                                                     </tr>";
                                             }

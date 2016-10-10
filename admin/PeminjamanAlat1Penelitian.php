@@ -19,7 +19,7 @@ session_start();
         include "koneksi/koneksi.php";
         //        menampilkan pesan jika ada pesan
         if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
-            echo '<div class="pesan" align="center">' . $_SESSION['pesan'] . '</div>';
+           echo '<div class="pesan" align="center"><p style="color:#FFF;font-size:16px">' . $_SESSION['pesan'] . '</p></div>';
         }
         //        mengatur session pesan menjadi kosong
         $_SESSION['pesan'] = '';
@@ -85,7 +85,7 @@ session_start();
                                         <tbody>
                                             <?php
                                             include "koneksi/koneksi.php";
-                                            $tampil = mysql_query("select * from barang where ketersediaan ='TERSEDIA' order by serial_num");
+                                            $tampil = mysql_query("select * from barang where ketersediaan ='TERSEDIA' and status='OK' order by serial_num");
                                             while ($r = mysql_fetch_array($tampil)) {
                                                 echo"
                                                     <form>
@@ -98,7 +98,7 @@ session_start();
                                                         <td align=center>$r[type]</td>
                                                         <td align=center>$r[model]</td>
                                                         <td align=center>$r[no_pelabelan]</td>
-                                                        <td align=center><a href=query/PenelitianAlat1.php?serial_num=$r[serial_num]&kode_pinjam=$_GET[kode_pinjam]&tipe_pinjam=$_GET[tipe_pinjam]&id_peminjam=$_GET[id_peminjam]><button class=btn-warning>Pilih</button></a></td>
+                                                        <td align=center><a href=query/PenelitianAlat1.php?serial_num=$r[serial_num]&kode_pinjam=$_GET[kode_pinjam]&tipe_pinjam=$_GET[tipe_pinjam]&id_peminjam=$_GET[id_peminjam]><button class='btn btn-danger'>Pilih</button></a></td>
                                                         </tr>
                                                     </form>";
                                             }

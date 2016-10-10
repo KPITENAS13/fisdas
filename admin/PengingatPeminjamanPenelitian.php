@@ -59,61 +59,70 @@ session_start();
                         <div class="content">
                             <div class="module">
                                 <div class="module-head">
-                                    <h3>Peminjaman Alat Inventaris</h3>
-                                    <?php
-                                    echo"
-                                    <a href=ApprovePraktikum.php?kode_pinjam=$_GET[kode_pinjam]><button class=btn-inverse>Kembali</button></a><br>
-                                	";
-                                    ?>
+                                    <h3>Permintaan Peminjaman Alat Untuk Penelitian</h3>
                                 </div>
                                 <div class="module-body table">
                                     <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display" width="100%">
-
                                         <thead>
                                             <tr>
-                                                <th>Serial Number</th>
+                                                <th>Kode Peminjaman</th>
+                                                <th>Id Peminjam</th>
                                                 <th>Nama</th>
                                                 <th>Status</th>
-                                                <th>Developer</th>
-                                                <th>Lokasi</th>
-                                                <th>Type</th>
-                                                <th>Model</th>
-                                                <th>No. Pelabelan</th>
+                                                <th>Tanggal Request</th>
+                                                <th>Tanggal Batas Kembali</th>
                                                 <th>-----</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                             include "koneksi/koneksi.php";
-                                            $tampil = mysql_query("select * from barang where ketersediaan ='TERSEDIA' and status='OK' order by serial_num");
+                                            $Date = date("Y-m-d");
+                                            $tampil = mysql_query("select * from requestpenelitian where status='Approve' and tanggal_batas = '$Date' and pengingat='Y'");
                                             while ($r = mysql_fetch_array($tampil)) {
+                                                $hasil = (string) strlen($r['id_peminjam']);
+                                                $nm = '';
+                                                $stat = '';
+                                                if ($hasil > 5) {
+                                                    $nama = mysql_query("select * from mahasiswa where id=$r[id_peminjam]");
+                                                    while ($n = mysql_fetch_array($nama)) {
+                                                        $nm = $n['nama'];
+                                                        $email1 = $n['email'];
+                                                        $stat = 'Mahasiswa';
+                                                    }
+                                                } else {
+                                                    $nama = mysql_query("select nama from dosen where nid=$r[id_peminjam]");
+                                                    while ($n = mysql_fetch_array($nama)) {
+                                                        $nm = $n['nama'];
+                                                        $email1 = $n['email'];
+                                                        $stat = 'Dosen';
+                                                    }
+                                                }
                                                 echo"
-                                                    <form>
+                                                    <form action=admin/PHPMailer/kirim_email_pengingat.php method=POST>
                                                     <tr>
-                                                        <td align=center>$r[serial_num]</td>
-                                                        <td align=center>$r[nama]</td>
-                                                        <td align=center>$r[status]</td>
-                                                        <td align=center>$r[developer]</td>
-                                                        <td align=center>$r[lokasi]</td>
-                                                        <td align=center>$r[type]</td>
-                                                        <td align=center>$r[model]</td>
-                                                        <td align=center>$r[no_pelabelan]</td>
-                                                        <td align=center><a href=query/PraktikumAlat2.php?serial_num=$r[serial_num]&kode_pinjam=$_GET[kode_pinjam]&tipe_pinjam=$_GET[tipe_pinjam]&id_peminjam=$_GET[id_peminjam]><button class='btn btn-danger'>Pilih</button></a></td>
-                                                        </tr>
-                                                    </form>";
+                                                        <input type=hidden name=kode_pinjam value=$r[kode_pinjam]>
+                                                      
+                                                        <td align=center>$r[kode_pinjam]</td>
+                                                        <td align=center>$r[id_peminjam]</td>
+                                                        <td align=center>$nm</td>
+                                                        <td align=center>$stat</td>
+                                                        <td align=center>$r[tanggal_request]</td>
+                                                        <td align=center>$r[tanggal_batas]</td>
+                                                        <td align=center><a href=admin/PHPMailer/kirim_email_pengingat.php?kode=$r[kode_pinjam]&email=$email1&nama=$nm><button class='btn btn-danger'>Proses</button></a></td>
+                                                    </tr>
+                                                </form>";
                                             }
                                             ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>Serial Number</th>
+                                                <th>Kode Peminjaman</th>
+                                                <th>Id Peminjam</th>
                                                 <th>Nama</th>
                                                 <th>Status</th>
-                                                <th>Developer</th>
-                                                <th>Lokasi</th>
-                                                <th>Type</th>
-                                                <th>Model</th>
-                                                <th>No. Pelabelan</th>
+                                                <th>Tanggal Request</th>
+                                                <th>Tanggal Batas Kembali</th>
                                                 <th>----</th>
                                             </tr>
                                         </tfoot>

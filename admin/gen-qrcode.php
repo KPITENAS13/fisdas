@@ -109,7 +109,7 @@ function printDiv(elementId) {
                                 <div class="module-foot">
                                     <div class="control-group">
                                         <div class="controls clearfix">
-                                            <a class="no-print" href="javascript:printDiv('area-1');"><button type="submit" class="btn btn-warning pull-right">Print</button></a>
+                                            <a class="no-print" href="javascript:printDiv('area-1');"><button type="submit" class="btn btn-danger" pull-right">Print</button></a>
                                         </div>
                                     </div>
                                 </div>

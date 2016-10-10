@@ -74,6 +74,17 @@ $r3 = mysql_fetch_array($h3);
                         <?php
                         if (!empty($r2)) {
                             echo "<li><a href='#' data-toggle='modal' data-target='#KoorPrakModal'>Koordinator Praktikum</a></li>";
+                            $notifp = mysql_query("select count(*) as jumlah from req_perbaikan where status = 'Belum Diperbaiki'");
+                            $nfp = mysql_fetch_array($notifp);
+                            echo "<li>
+                                    <a href='koorlab_perbaikan_alat.php'>
+                                        Perbaikan Alat ";
+                                        if ($nfp['jumlah'] != 0) {
+                                            echo "<span class='badge'>" . $nfp['jumlah'] . "</span>";
+                                        }
+                                    echo"
+                                    </a>
+                                </li>";
                         }
                         ?>
                         <li><a href="#" data-toggle="modal" data-target="#PeminjamanModal">Peminjaman</a></li>
@@ -136,11 +147,11 @@ $r3 = mysql_fetch_array($h3);
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <script>
-    function gotopage(){
+    function gotopage() {
         var praktikum = document.getElementById("pra").value;
         var periode = document.getElementById("per").value;
-        var path = "koordinator_lab.php?kategori="+praktikum+"&&periode="+periode;
-        window.location.href=path;
+        var path = "koordinator_lab.php?kategori=" + praktikum + "&&periode=" + periode;
+        window.location.href = path;
     }
 </script>
 

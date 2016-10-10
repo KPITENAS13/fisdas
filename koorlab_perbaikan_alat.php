@@ -8,7 +8,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Blog Single | Corlate</title>
+        <title>Peminjaman Penelitian | Lab IF</title>
 
         <!-- core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@ session_start();
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>
         <![endif]-->       
-        <link rel="shortcut icon" href="images/ico/favicon.ico">
+        <link rel="shortcut icon" href="images/ico/icon.png">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -31,6 +31,15 @@ session_start();
     </head><!--/head-->
 
     <body>
+        <?php
+        include "koneksi.php";
+        //        menampilkan pesan jika ada pesan
+        if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
+            echo '<div class="pesan" align="center">' . $_SESSION['pesan'] . '</div>';
+        }
+        //        mengatur session pesan menjadi kosong
+        $_SESSION['pesan'] = '';
+        ?>
         <header id="header">
             <?php
             if (empty($_SESSION['username'])) {
@@ -45,9 +54,9 @@ session_start();
 
         <section id="contact-info">
             <div class="center wow fadeInDown">
-                <h2>Data Inventaris Alat</h2>
+                <h2>Perbaikan Alat</h2>
                 <p class="lead">
-                    Daftar Alat Inventaris Laboratorium Fisika ITENAS
+                    Daftar Kerusakan Alat Laboratorium Fisika ITENAS
                 </p>
             </div>
             <div class="row">
@@ -56,51 +65,30 @@ session_start();
                            width="100%">
                         <thead>
                             <tr>
-                                <th>Serial Number</th>
-                                <th>Nama</th>
-                                <th>Status</th>
-                                <th>Developer</th>
-                                <th>Lokasi</th>
-                                <th>Type</th>
-                                <th>Model</th>
-                                <th>Last Update</th>
-                                <th>No. Pelabelan</th>
-                                <th>Ketersediaan</th>
+                                <th>Kode Barang</th>
+                                <th>Info Kerusakan</th>
+                                <th>Proses</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                             include "koneksi.php";
-                            $tampil = mysql_query("select * from barang order by serial_num");
+                            $tampil = mysql_query("select * from req_perbaikan where status='Belum Diperbaiki'");
                             while ($r = mysql_fetch_array($tampil)) {
                                 echo"
                                                     <tr>	
-                                                        <td align=center>$r[serial_num]</td>
-                                                        <td align=center>$r[nama]</td>
-                                                        <td align=center>$r[status]</td>
-                                                        <td align=center>$r[developer]</td>
-                                                        <td align=center>$r[lokasi]</td>
-                                                        <td align=center>$r[type]</td>
-                                                        <td align=center>$r[model]</td>
-                                                        <td align=center>$r[last_update]</td>
-                                                        <td align=center>$r[no_pelabelan]</td>
-                                                        <td align=center>$r[ketersediaan]</td>
+                                                        <td align=center>$r[kode_barang]</td>
+                                                        <td align=center>$r[info_perbaikan]</td>
+                                                        <td align=center><a href=query/perbaikanAlatKoorlab.php?kode_barang=$r[kode_barang]><button class='btn btn-danger'>Perbaiki</button></a></td>     
                                                     </tr>";
                             }
                             ?>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>Serial Number</th>
-                                <th>Nama</th>
-                                <th>Status</th>
-                                <th>Developer</th>
-                                <th>Lokasi</th>
-                                <th>Type</th>
-                                <th>Model</th>
-                                <th>Last Update</th>
-                                <th>No. Pelabelan</th>
-                                <th>Ketersediaan</th>
+                                <th>Kode Barang</th>
+                                <th>Info Kerusakan</th>
+                                <th>Proses</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -121,6 +109,7 @@ session_start();
         <script src="js/jquery-1.12.3.js"></script>
         <script src="datatable/media/js/jquery.dataTables.min.js"></script>
         <script src="datatable/media/js/dataTables.bootstrap.min.js"></script>
+        <script src="admin/scripts/jquery.min.js"></script>
         <script>
             $(document).ready(function () {
                 $('#table_id').DataTable();
