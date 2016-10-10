@@ -8,7 +8,6 @@ $sql = "SELECT * FROM presentase_nilai WHERE periode='" . $periode . "' AND prak
 $result = mysqli_query($connect, $sql);
 $output .= ''
         . '<div class="table-responsive">'
-        . '<b>Komponen Nilai</b>'
         . '     <table class="table table-bordered table-striped" style="width:100%;" id="tabel3">'
         . '         <tr align="center">'
         . '             <th style="width:20%;">Tugas Pendahuluan (%)</th>'
@@ -35,7 +34,7 @@ if (mysqli_num_rows($result) > 0) {
     }
 } else {
     $output .= '<tr align="center">'
-            . '     <td colspan="3"> Presentase Nilai Belum Ditentukan, Presetase Nilai Menggunakan Pengaturan Default</td>'
+            . '     <td colspan="5"> Presentase Nilai Belum Ditentukan, Presetase Nilai Menggunakan Pengaturan Default</td>'
             . ' </tr>';
 }
 $output .= '</table>'

@@ -3,7 +3,7 @@
 $tanggal = date("Y/m/d");
 $kelas = $_POST['kelas'];
 $pertemuan = $_POST['pertemuan'];
-$praktikum = $_POST['praktikum'];
+$prodi = $_POST['prodi'];
 $periode = $_POST['periode'];
 //$nama_file = $periode . "_" . $praktikum . "_" . $kelas . ".xls";
 $nama_file = "temp.xls";
@@ -24,7 +24,7 @@ if ($uploadOk == 0) {
         //mysql_query("INSERT INTO file 
         //(nama_file,tanggal_upload,kategori,path)VALUES 
         //('$nama_file','$tanggal','$kategori','$target_file')");
-        header("location:absensi_proses.php?periode=$periode&&praktikum=$praktikum&&kelas=$kelas&&pertemuan=$pertemuan&&target=$nama_file");
+        header("location:absensi_proses.php?periode=$periode&&prodi=$prodi&&kelas=$kelas&&pertemuan=$pertemuan&&target=$nama_file");
         //header("location:../admin_absensi.php");
     } else {
         echo "Sorry, there was an error uploading your file.";

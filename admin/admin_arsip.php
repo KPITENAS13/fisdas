@@ -6,7 +6,7 @@ session_start();
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lab IF</title>
+        <title>Lab Fisika</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -90,21 +90,20 @@ session_start();
                                     </table>
                                     <div style="width: 100%; padding-top: 2%;" align="center">
                                         <button class="btn btn-success" data-toggle="modal"  style="width: 90%" 
-                                                data-target="
-                                                <?php 
-                                                if($_GET['kategori']=="Modul"){
-                                                    echo "#UploadModul";
-                                                }else if($_GET['kategori']=="Jobsheet"){
-                                                    echo "#UploadJobsheet";
-                                                }else if($_GET['kategori']=="Absensi"){
-                                                    echo "#UploadAbsensi";
-                                                }else if($_GET['kategori']=="Sertifikat"){
-                                                    echo "#UploadSertifikat";
-                                                }else if($_GET['kategori']=="SuratKeluar"){
-                                                    echo "#UploadSurat";
+                                                <?php
+                                                if ($_GET['kategori'] == "Modul") {
+                                                    echo " data-target='#UploadModul'";
+                                                } else if ($_GET['kategori'] == "Jobsheet") {
+                                                    echo " data-target='#UploadJobsheet'";
+                                                } else if ($_GET['kategori'] == "Absensi") {
+                                                    echo 'disabled';
+                                                } else if ($_GET['kategori'] == "Sertifikat") {
+                                                    echo 'disabled';
+                                                } else if ($_GET['kategori'] == "Surat") {
+                                                    echo 'disabled';
                                                 }
                                                 ?>
-                                                ">
+                                                >
                                             <i class='menu-icon icon-pencil'></i> Tambah File Dokumentasi
                                         </button>
                                     </div>

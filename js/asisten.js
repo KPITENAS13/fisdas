@@ -6,7 +6,7 @@ $(document).ready(function () {
     presentase();
 });
 
-//--------------------------------------------------------------------------Daftar Nilai Harian
+//-------------------------------------------------------------------------- Nilai Harian
 function showNilai(nrp, periode, praktikum) {
     if (nrp == "") {
         document.getElementById("live_data").innerHTML = "<p><b>Masukkan NRP peserta untuk melihat detail nilai...</b> <br>"
@@ -129,7 +129,7 @@ $(document).on('blur', '.ta', function () {
     edit_data(id, ta, "ta");
 });
 
-//--------------------------------------------------------------------------Daftar Nilai Harian
+//-------------------------------------------------------------------------- Nilai Harian
 
 //--------------------------------------------------------------------------Daftar Asisten
 
@@ -212,9 +212,9 @@ function hitung_nilai_harian(nrp)
     var ptp = $('.ptp').text();
     var pth = $('.pth').text();
     var pta = $('.pta').text();
-    var per = $('.per').text();
+    var per = $('.jml').text();
     var pertemuan = parseInt(per);
-
+    
     $('.tp').each(function () {
         var tp = $(this);
         tptot += parseInt(tp.text());
@@ -235,13 +235,13 @@ function hitung_nilai_harian(nrp)
         nh = tptot + thtot + tatot;
         nh = nh.toFixed(2);
     } else {
-        tptot = (tptot / pertemuan) / 100 * parseInt(ptp);
+        tptot = (tptot / pertemuan);  100 * parseInt(ptp);
         thtot = (thtot / pertemuan) / 100 * parseInt(pth);
         tatot = (tatot / pertemuan) / 100 * parseInt(pta);
         nh = tptot + thtot + tatot;
         nh = nh.toFixed(2);
     }
-
+    
     var periode = document.getElementById("periode").value;
     var praktikum = document.getElementById("praktikum").value;
     $.ajax({

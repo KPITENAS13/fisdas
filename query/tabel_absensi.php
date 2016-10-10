@@ -4,10 +4,10 @@ include 'koneksi.php';
 //cek jumlah pertemuan
 $kelas = "";
 $periode = "";
-$praktikum = "";
-if (isset($_POST['praktikum'])) {
+$prodi = "";
+if (isset($_POST['prodi'])) {
     $periode = $_POST['periode'];
-    $praktikum = $_POST['praktikum'];
+    $prodi = $_POST['prodi'];
     $kelas = $_POST['kelas'];
 }
 
@@ -17,26 +17,27 @@ if (isset($_SESSION['kode'])){
     $nrp = "";
 }
 
-$query = "SELECT COUNT(DISTINCT pertemuan) AS jml FROM absensi WHERE nama_praktikum='$praktikum' and periode='$periode' and kelas='$kelas'";
+$query = "SELECT COUNT(DISTINCT pertemuan) AS jml FROM absensi WHERE prodi='$prodi' and periode='$periode' and kelas='$kelas'";
 $hasil = mysql_query($query);
 $row = mysql_fetch_array($hasil);
 $jml_pertemuan = $row['jml'];
 
-$q = mysql_query("SELECT DISTINCT nrp,nama,count(nrp)as jml FROM absensi,mahasiswa WHERE absensi.nrp=mahasiswa.id AND nama_praktikum='$praktikum' AND periode='$periode' AND kelas='$kelas' GROUP BY nrp");
+$q = mysql_query("SELECT DISTINCT nrp,nama,count(nrp)as jml FROM absensi,mahasiswa WHERE absensi.nrp=mahasiswa.id AND prodi='$prodi' AND periode='$periode' AND kelas='$kelas' GROUP BY nrp");
 while ($r = mysql_fetch_array($q)) {
     $persen = ($r['jml'] * 100) / $jml_pertemuan;
+    $p = round($persen);
     echo "
         <tr>
             <td>$r[nrp]</td>
             <td>$r[nama]</td>";
     if ($r['nrp'] == $nrp) {
-        echo"<td>$persen % 
+        echo"<td>$p % 
                 <a href='#' data-toggle='modal' data-target='#UserModal'>
                 <span class='glyphicon glyphicon-info-sign'></span>
                 </a>
             </td>";
     } else {
-        echo"<td>$persen %</td>";
+        echo"<td>$p %</td>";
     }
 
     echo "</tr>";

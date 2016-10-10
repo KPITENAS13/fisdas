@@ -29,7 +29,6 @@ $r3 = mysql_fetch_array($h3);
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Seputar Lab <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="user_inventaris.php">Inventaris</a></li>
-                        <li><a href="info_jadwal_lab.php">Jadwal Penggunaan Lab</a></li>
                         <li><a href="monitoring.php">Monitoring</a></li>
                         <li><a href="user_peminjaman_penelitian.php">Peminjaman Penelitian</a></li>
                         <li><a href="info_topik_TA.php">Topik TA</a></li>
@@ -68,7 +67,7 @@ $r3 = mysql_fetch_array($h3);
                         </li>
                         <?php
                         if (!empty($r1)) {
-                            echo "<li><a href='#' data-toggle='modal' data-target='#KoorLabModal'>Koordinator Laboratorium</a></li>";
+                            echo "<li><a href='#' data-toggle='modal' data-target='#KoorLabModal'>Kepala Laboratorium</a></li>";
                         }
                         ?>
                         <?php
@@ -113,15 +112,7 @@ $r3 = mysql_fetch_array($h3);
                             <div class="controls">
                                 <select tabindex="1" data-placeholder="Select here.." class="form-control" name="praktikum" id="pra">
                                     <option value="">Select here..</option>
-                                    <option value="PEMDAS">Pemrograman Dasar</option>
-                                    <option value="ORKOM">Organisasi & Arsitektur Komputer</option>
-                                    <option value="PRC">Pemrograman Robot Cerdas</option>
-                                    <option value="JST">Jaringan Syaraf Tiruan</option>
-                                    <option value="JARKOM">Jaringan Komputer</option>
-                                    <option value="REKWEB">Rekayasa Web</option>
-                                    <option value="BASDAT">Basis Data</option>
-                                    <option value="PBD">Pemrograman Basis Data</option>
-                                    <option value="PBO">Pemrograman Berorientasi Objek</option>
+                                    <option value="FISDAS">Fisika Dasar</option>
                                 </select>
                             </div>
                         </div>

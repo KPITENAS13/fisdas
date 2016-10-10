@@ -75,6 +75,12 @@ $_SESSION['pesan'] = '';
                 Permintaan Perbaikan
             </a>
         </li>
+        <li>
+            <a href="berita_acara.php">
+                <i class="menu-icon icon-barcode"></i>
+                Berita Acara
+            </a>
+        </li>
     </ul>
     <!--/.widget-nav-->
     <ul class="widget widget-menu unstyled">
@@ -126,8 +132,7 @@ $_SESSION['pesan'] = '';
     </ul>
     <!--/.widget-nav-->
     <ul class="widget widget-menu unstyled">
-        <li><a href="praktikum.php"><i class="menu-icon icon-lightbulb"></i> Koordinator Laboratorium </a></li>
-        <li><a href="admin_info_jadwal_lab.php"><i class="menu-icon icon-time"></i> Jadwal Penggunaan Lab </a></li>
+        <li><a href="praktikum.php"><i class="menu-icon icon-lightbulb"></i> Kepala Laboratorium </a></li>
         <li><a href="admin_info_jadwal_praktikum.php"><i class="menu-icon icon-table"></i> Jadwal Praktikum </a></li>
         <li><a href="admin_info_topik_TA.php"><i class="menu-icon icon-list-alt"></i> Topik TA </a></li>
     </ul>
@@ -154,7 +159,7 @@ $_SESSION['pesan'] = '';
                 <li><a href="admin_arsip.php?kategori=Jobsheet"><i class="icon-tasks"></i> Jobsheet </a></li>
                 <li><a href="admin_arsip.php?kategori=Modul"><i class="icon-book"></i> Modul </a></li>
                 <li><a href="admin_arsip.php?kategori=Sertifikat"><i class="icon-star"></i> Sertifikat </a></li>
-                <li><a href="admin_arsip.php?kategori=SuratKeluar"><i class="icon-legal"></i> Surat Keluar </a></li>
+                <li><a href="admin_arsip.php?kategori=Surat"><i class="icon-legal"></i> Surat Keluar </a></li>
             </ul>
         </li>
     </ul>

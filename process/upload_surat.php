@@ -4,7 +4,7 @@ session_start();
 include "../koneksi.php";
 $nama = $_POST['nama_file'];
 $tanggal = date("Y/m/d");
-$nama_file = $nama  . ".pdf";
+$nama_file = $nama  . ".docx";
 $target_dir = "../admin/file/";
 $target_dir2 = "../file/";
 $target_file = $target_dir . $nama_file;

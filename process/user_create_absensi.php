@@ -27,16 +27,10 @@ if ($per == "1617") {
 }
 
 //praktikum
-if ($prak == "PEMDAS") {
-    $praktikum = "Pemrograman Dasar";
-} else if ($prak == "ORKOM") {
-    $praktikum = "Organisasi & Arsitektur Komputer";
-} else if ($prak == "PRC") {
-    $praktikum = "Pemrograman Robot Cerdas";
-} else if ($prak == "JARKOM") {
-    $praktikum = "Jaringan Komputer";
-} else if ($prak == "REKWEB") {
-    $praktikum = "Rekayasa Web";
+if ($prak == "FISDAS") {
+    $praktikum = "Fisika Dasar";
+} else {
+    $praktikum = "Undefined";
 }
 
 //New Word Document
@@ -76,7 +70,7 @@ $table->addCell(2000, $styleCell)->addText('NRP', $fontStyle);
 $table->addCell(2000, $styleCell)->addText('Nama', $fontStyle);
 for ($i = 1; $i <= $pertemuan; $i++) {
     $table->addCell(1000, $styleCell)->addText(date_format($date, "d/m"), $fontStyle);
-    date_add($date,date_interval_create_from_date_string("7 days"));
+    date_add($date, date_interval_create_from_date_string("7 days"));
 }
 
 // Add cells (Nama Asisten)

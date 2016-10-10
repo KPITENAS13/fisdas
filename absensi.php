@@ -177,11 +177,18 @@ if (isset($_POST['submit'])) {
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label" for="basicinput">Praktikum</label>
+                                <label class="control-label" for="basicinput">Program Studi</label>
                                 <div class="controls">
-                                    <select tabindex="1" data-placeholder="Select here.." class="form-control" name="praktikum" id="pra">
+                                    <select tabindex="1" data-placeholder="Select here.." class="form-control" name="prodi" id="pra">
                                         <option value="">Select here..</option>
-                                        <option value="PEMDAS">Fisika Dasar</option>
+                                        <option value="Teknik Elektro">Teknik Elektro</option>
+                                        <option value="Teknik Mesin">Teknik Mesin</option>
+                                        <option value="Teknik Industri">Teknik Industri</option>
+                                        <option value="Teknik Informatika">Teknik Informatika</option>
+                                        <option value="Teknik Kimia">Teknik Kimia</option>
+                                        <option value="Teknik Arsitektur">Teknik Arsitektur</option>
+                                        <option value="Teknik Geodesi">Teknik Geodesi</option>
+                                        <option value="Teknik Sipil">Teknik Sipil</option>
                                     </select>
                                 </div>
                             </div>
