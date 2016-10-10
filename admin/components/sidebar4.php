@@ -60,6 +60,12 @@ $_SESSION['pesan'] = '';
                 Permintaan Perbaikan
             </a>
         </li>
+        <li>
+            <a href="berita_acara.php">
+                <i class="menu-icon icon-barcode"></i>
+                Berita Acara
+            </a>
+        </li>
     </ul>
     <!--/.widget-nav-->
     <ul class="widget widget-menu unstyled">

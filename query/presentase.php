@@ -9,11 +9,11 @@ $output .= ''
         . '<div class="table-responsive">'
         . '     <table class="table table-bordered table-striped" style="width:100%;" id="tabel3">'
         . '         <tr align="center">'
-        . '             <th style="width:20%;">Nilai Harian (%)</th>'
+        . '             <th style="width:20%;">Tugas (%)</th>'
         . '             <th style="width:20%;">Nilai Absensi (%)</th>'
         . '             <th style="width:20%;">Nilai UTS (%)</th>'
         . '             <th style="width:20%;">Nilai UAS (%)</th>'
-        . '             <th style="width:20%;">Nilai Project (%)</th>'
+        . '             <th style="width:20%;">Nilai Lain-lain (%)</th>'
         . '         </tr>';
 if(mysqli_num_rows($result) > 0){
     while($row = mysqli_fetch_array($result)){

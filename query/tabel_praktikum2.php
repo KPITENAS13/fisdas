@@ -30,13 +30,13 @@ while ($r = mysql_fetch_array($q2)) {
         <tr class='baris'>
             <td class='nrp' data-id1='$r[kode]'>$r[nrp]</td>
             <td class='nama' data-id2='$r[kode]'>$r[nama]</td>
-            <td class='kls' data-id3='$r[kode]' $content >$r[kelas]</td>
-            <td class='nil nh' data-id4='$r[kode]' style='background-color:#00FF00;'>$r[nilai_harian]</td>
-            <td class='nil uts' data-id5='$r[kode]' contenteditable>$r[uts]</td>
-            <td class='nil uas' data-id6='$r[kode]' contenteditable>$r[uas]</td>
-            <td class='nil pro' data-id7='$r[kode]' contenteditable>$r[project]</td>
-            <td class='nil abs' data-id8='$r[kode]' style='background-color:#00FF00;'>$r[absen]</td>
-            <td class='tot' data-id9='$r[kode]' style='background-color:#00FF00;' >$r[total]</td>
+            <td style='background-color:#FFF' class='kls' data-id3='$r[kode]' $content >$r[kelas]</td>
+            <td class='nil nh' data-id4='$r[kode]' style='background-color:#AAAAAA;'>$r[nilai_harian]</td>
+            <td style='background-color:#FFF' class='nil uts' data-id5='$r[kode]' contenteditable>$r[uts]</td>
+            <td style='background-color:#FFF' class='nil uas' data-id6='$r[kode]' contenteditable>$r[uas]</td>
+            <td style='background-color:#FFF' class='nil pro' data-id7='$r[kode]' contenteditable>$r[project]</td>
+            <td class='nil abs' data-id8='$r[kode]' style='background-color:#AAAAAA;'>$r[absen]</td>
+            <td class='tot' data-id9='$r[kode]' style='background-color:#AAAAAA;' >$r[total]</td>
         </tr>";
 }
 ?>

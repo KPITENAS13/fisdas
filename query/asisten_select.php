@@ -16,7 +16,7 @@ if(mysqli_num_rows($result) > 0){
         $output .= '<tr>'
                 . ' <td class="nrp_asisten" data-id1="'.$row["id"].'">'.$row["nrp"].'</td>'
                 . ' <td class="nama" data-id2="'.$row["id"].'" >'.$row["nama"].'</td>'
-                . ' <td class="kelas" data-id3="'.$row["kode"].'" contenteditable>'.$row["kelas"].'</td>'
+                . ' <td style="background-color:#FFF" class="kelas" data-id3="'.$row["kode"].'" contenteditable>'.$row["kelas"].'</td>'
                 . '</tr>';
     }
 }else{

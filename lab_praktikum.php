@@ -59,7 +59,7 @@ session_start();
                     ?>
                 </h2>
                 <p class="lead">
-                    Pusat informasi kegiatan praktikum Laboratorium Teknik Informatika ITENAS
+                    Pusat informasi kegiatan praktikum Laboratorium Fisika ITENAS
                 </p>
             </div>
             <div class="container">
@@ -81,7 +81,7 @@ session_start();
             <div class="center wow fadeInDown">
                 <h2>Peserta Praktikum</h2>
                 <p class="lead">
-                    Nama mahasiswa yang terdaftar untuk mengikuti praktikum Laboratorium
+                    Nama mahasiswa yang terdaftar untuk mengikuti Praktikum Laboratorium Fisika
                 </p>
             </div>
             <div class="container">
@@ -130,9 +130,6 @@ session_start();
                                     <th>
                                         Kelas
                                     </th>
-                                    <th>
-                                        Nilai
-                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -150,9 +147,6 @@ session_start();
                                     </th>
                                     <th>
                                         Kelas
-                                    </th>
-                                    <th>
-                                        Nilai
                                     </th>
                                 </tr>
                             </tfoot>
@@ -201,7 +195,7 @@ session_start();
     <div class="modal-dialog">
         <div class="alert alert-warning alert-dismissable">
             <form name="formlogin" method="post" action="process/daftar_praktikan_proses.php">
-                <h4 align="center">Verifikasi Pendaftaran Praktikumz Laboratorium</h4>
+                <h4 align="center">Verifikasi Pendaftaran Praktikum Laboratorium</h4>
                 <p align="center"><br>Apakah anda yakin ingin mendaftar sebagai praktikan ?<br></p>
                 <p align="center">
                     <br>

@@ -9,21 +9,21 @@ $output .= ''
         . '<div class="table-responsive">'
         . '     <table class="table table-bordered table-striped" style="width:100%;" id="tabel3">'
         . '         <tr align="center">'
-        . '             <th>Nilai Harian (%)</th>'
+        . '             <th>Tugas (%)</th>'
         . '             <th>Nilai Absensi (%)</th>'
         . '             <th>Nilai UTS (%)</th>'
         . '             <th>Nilai UAS (%)</th>'
-        . '             <th>Nilai Project (%)</th>'
+        . '             <th>Nilai Lain-lain (%)</th>'
         . '             <th>Aksi</th>'
         . '         </tr>';
 if(mysqli_num_rows($result) > 0){
     while($row = mysqli_fetch_array($result)){
         $output .= '<tr align="center">'
-                . ' <td class="pnh" data-id1="'.$row["id"].'" contenteditable>'.$row["nilai_harian"].'</td>'
-                . ' <td class="pabs" data-id2="'.$row["id"].'" contenteditable>'.$row["absensi"].'</td>'
-                . ' <td class="puts" data-id3="'.$row["id"].'" contenteditable>'.$row["uts"].'</td>'
-                . ' <td class="puas" data-id4="'.$row["id"].'" contenteditable>'.$row["uas"].'</td>'
-                . ' <td class="ppro" data-id5="'.$row["id"].'" contenteditable>'.$row["project"].'</td>'
+                . ' <td style="background-color: #FFF"  class="pnh" data-id1="'.$row["id"].'" contenteditable>'.$row["nilai_harian"].'</td>'
+                . ' <td style="background-color: #FFF"  class="pabs" data-id2="'.$row["id"].'" contenteditable>'.$row["absensi"].'</td>'
+                . ' <td style="background-color: #FFF"  class="puts" data-id3="'.$row["id"].'" contenteditable>'.$row["uts"].'</td>'
+                . ' <td style="background-color: #FFF"  class="puas" data-id4="'.$row["id"].'" contenteditable>'.$row["uas"].'</td>'
+                . ' <td style="background-color: #FFF"  class="ppro" data-id5="'.$row["id"].'" contenteditable>'.$row["project"].'</td>'
                 . ' <td><button class="btn btn-danger btn-xs" name="pre_delete" id="pre_delete" data-id6="'.$row["id"].'"><span class="glyphicon glyphicon-remove"></span></button></td>'
                 . '</tr>';
     }

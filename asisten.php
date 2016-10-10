@@ -17,7 +17,7 @@ $hasil = mysql_query($query);
 $row = mysql_fetch_array($hasil);
 $jml_pertemuan = $row['pertemuan_berlangsung'];
 
-$q = mysql_query("SELECT DISTINCT nrp,nama,count(nrp)as jml FROM absensi,mahasiswa WHERE absensi.nrp=mahasiswa.id AND nama_praktikum='$kategori' AND periode='$newperiode' GROUP BY nrp");
+$q = mysql_query("SELECT DISTINCT nrp,nama,count(nrp)as jml FROM absensi,mahasiswa WHERE absensi.nrp=mahasiswa.id AND prodi='$kategori' AND periode='$newperiode' GROUP BY nrp");
 while ($r = mysql_fetch_array($q)) {
     $persen = ($r['jml'] * 100) / $jml_pertemuan;
     mysql_query("UPDATE praktikum SET absen=$persen WHERE prak='$kategori' AND periode='$periode' AND nrp=$r[nrp]");
@@ -32,7 +32,7 @@ while ($r = mysql_fetch_array($q)) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Asisten Lab | Lab IF</title>
+        <title>Asisten Lab | Lab Fisika</title>
 
         <!-- core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -80,7 +80,7 @@ while ($r = mysql_fetch_array($q)) {
                     ?>
                 </h2>
                 <p class="lead">
-                    Pusat informasi kegiatan praktikum Laboratorium Teknik Informatika ITENAS
+                    Pusat informasi kegiatan praktikum Laboratorium Fisika ITENAS
                 </p>
             </div>
             <div class="container">
@@ -90,15 +90,15 @@ while ($r = mysql_fetch_array($q)) {
                             <div class="media">
                                 <div class="parrent pull-left">
                                     <ul class="nav nav-tabs nav-stacked">
-                                        <li class="active"><a href="#tab1" data-toggle="tab" class="analistic-01">Request Praktikan</a></li>
+                                        <li class="active"><a href="#tab1" data-toggle="tab" class="analistic-01">Pendaftaran Praktikan</a></li>
+                                        <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Daftar Praktikan & Nilai</a></li>
+                                        <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Nilai Harian</a></li>
                                         <?php
                                         if (mysql_num_rows($result) > 0) {
                                             echo '
                                             <li class=""><a href="#tab5" data-toggle="tab" class="analistic-01">Daftar Asisten</a></li>';
                                         }
                                         ?>
-                                        <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Daftar Nilai Praktikan</a></li>
-                                        <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Nilai Harian</a></li>
                                         <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Modul & Jobsheet</a></li>
                                     </ul>
                                 </div>
@@ -158,7 +158,7 @@ while ($r = mysql_fetch_array($q)) {
                                                             UAS
                                                         </th>
                                                         <th>
-                                                            Project
+                                                            Nilai Lain-lain
                                                         </th>
                                                         <th>
                                                             Absen
@@ -194,7 +194,7 @@ while ($r = mysql_fetch_array($q)) {
                                                             UAS
                                                         </th>
                                                         <th>
-                                                            Project
+                                                            Nilai Lain-lain
                                                         </th>
                                                         <th>
                                                             Absen

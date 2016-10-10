@@ -39,10 +39,10 @@ if ((mysqli_num_rows($result) > 0) || (mysqli_num_rows($result3) > 0 )) {
                 . '</tr>';
     }
     $output .= '<tr>'
-            . '     <td id="pertemuan" contenteditable></td>'
-            . '     <td id="tp" contenteditable></td>'
-            . '     <td id="th" contenteditable></td>'
-            . '     <td id="ta" contenteditable></td>'
+            . '     <td style="background-color:#FFF" id="pertemuan" contenteditable></td>'
+            . '     <td style="background-color:#FFF" id="tp" contenteditable></td>'
+            . '     <td style="background-color:#FFF" id="th" contenteditable></td>'
+            . '     <td style="background-color:#FFF" id="ta" contenteditable></td>'
             . '     <td><button name="btn_add" id="btn_add" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-pencil"></span> Tambah</button></td>'
             . ' </tr>';
 } else {

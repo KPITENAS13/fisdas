@@ -8,11 +8,11 @@ $sql = "SELECT * FROM presentase_nilai WHERE periode='" . $periode . "' AND prak
 $result = mysqli_query($connect, $sql);
 $output .= ''
         . '<div class="table-responsive">'
-        . '<b>Komponen Nilai</b>'
+        . ''
         . '     <table class="table table-bordered table-striped" style="width:100%;" id="tabel3">'
         . '         <tr align="center">'
         . '             <th >Tugas Pendahuluan (%)</th>'
-        . '             <th >Tugas Harian (%)</th>'
+        . '             <th >Tugas Awal (%)</th>'
         . '             <th >Tugas Akhir (%)</th>'
         . '             <th >Pertemuan Terakhir</th>'
         . '             <th >Jumlah Pertemuan</th>'
@@ -21,11 +21,11 @@ if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_array($result)) {
 
         $output .= '<tr align="center">'
-                . ' <td class="ptp" data-id1="' . $row["id"] . '" contenteditable>' . $row["tp"] . '</td>'
-                . ' <td class="pth" data-id2="' . $row["id"] . '" contenteditable>' . $row["th"] . '</td>'
-                . ' <td class="pta" data-id3="' . $row["id"] . '" contenteditable>' . $row["ta"] . '</td>'
+                . ' <td style="background-color: #FFF" class="ptp" data-id1="' . $row["id"] . '" contenteditable>' . $row["tp"] . '</td>'
+                . ' <td style="background-color: #FFF" class="pth" data-id2="' . $row["id"] . '" contenteditable>' . $row["th"] . '</td>'
+                . ' <td style="background-color: #FFF" class="pta" data-id3="' . $row["id"] . '" contenteditable>' . $row["ta"] . '</td>'
                 . ' <td class="per" data-id4="' . $row["id"] . '" >' . $row["pertemuan_berlangsung"] . '</td>'
-                . ' <td class="jml" data-id5="' . $row["id"] . '" contenteditable>' . $row["jml_pertemuan"] . '</td>'
+                . ' <td style="background-color: #FFF" class="jml" data-id5="' . $row["id"] . '" contenteditable>' . $row["jml_pertemuan"] . '</td>'
                 . '</tr>';
     }
 } else {
