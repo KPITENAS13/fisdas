@@ -19,7 +19,7 @@ session_start();
         include "koneksi/koneksi.php";
         //        menampilkan pesan jika ada pesan
         if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
-            echo '<div class="pesan" align="center">' . $_SESSION['pesan'] . '</div>';
+            echo '<div class="pesan" align="center"><p style="color:#FFF;font-size:16px">' . $_SESSION['pesan'] . '</p></div>';
         }
         //        mengatur session pesan menjadi kosong
         $_SESSION['pesan'] = '';
@@ -59,14 +59,15 @@ session_start();
                         <div class="content">
                             <div class="module">
 
-                                <form class="form-vertical"  action="query/perbaikanAlat.php" method="POST" name="form" enctype="multipart/form-data">
+                                <form class="form-vertical"  action="query/perbaikanAlat.php" method="POST" name="form" enctype="multipart/form-data" onsubmit="return validasi()">
                                     <div class="module-head">
                                         <h3>Permintaan Perbaikan Alat</h3>
                                     </div>
                                     <div class="module-body">
                                         <div class="control-group">
                                             <div class="controls row-fluid">
-                                                <input class="span4" type="text" name="serial_num" placeholder="Serial Number" required>
+                                                <input class="span4" type="text" id="hasilAlat" name="serial_num" placeholder="Serial Number" required>
+                                                <button href=# class="btn btn-danger" data-toggle="modal" data-target="#AlatModal" data-keyboard="false" data-backdrop="static">Pilih</button>
                                             </div>
                                         </div>
                                         <div class="control-group">
@@ -78,7 +79,7 @@ session_start();
                                     <div class="module-foot">
                                         <div class="control-group">
                                             <div class="controls clearfix">
-                                                <button type="submit" class="btn btn-warning pull-right">Kirim</button>
+                                                <button type="submit" class="btn btn-danger" pull-right">Kirim</button>
                                             </div>
                                         </div>
                                     </div>
@@ -108,5 +109,27 @@ session_start();
         <script src="scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="scripts/common.js" type="text/javascript"></script>
         <script src="scripts/jquery.min.js"></script>
+        <script language="JavaScript" type="text/javascript">
+                                    function validasi() {
+                                        var strip2 = document.form.serial_num;
+                                        var strip1 = document.forms['form']['serial_num'].value;
+                                        var stripos = strip1.indexOf('-');
+                                        var strippos = strip1.lastIndexOf("-");
+
+                                        if (stripos < 1 || stripos + 1 >= strip1.length) {
+                                            alert("Serial Number harus mengandung '-' (Strip) Untuk Menggabungkan Kode Lab dan Kode Barang Contoh : FD-A01");
+                                            strip2.focus();
+                                            return (false);
+                                        }
+                                        return (true);
+                                    }
+        </script>
     </body>
+
+    <!--<div class="modal fade" id="aa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       
+    </div> -->
+    <div class="modal fade hide" id="AlatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <?php include '../modalAlat/MasukanAlat.php'; ?>
+    </div>
 </html>

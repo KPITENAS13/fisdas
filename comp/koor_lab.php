@@ -13,14 +13,14 @@ if (empty($row)) {
     echo "
     <div class='clients-comments text-center'>
         <img src='images/5.png' class='img-circle' alt=''>
-        <h3>Koordinator Laboratorium</h3>
+        <h3>Kepala Laboratorium</h3>
         <h4><span>Belum Ditentukan</span></h4>
     </div>";
 } else {
     echo "
     <div class='clients-comments text-center'>
         <img src='$row[foto]' class='img-circle' alt=''>
-        <h3>Koordinator Praktikum</h3>
+        <h3>Kepala Laboratorium</h3>
         <h4><span>$row[nama]</span></h4>
     </div>";
 }

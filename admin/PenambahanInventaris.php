@@ -13,13 +13,14 @@ session_start();
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
               rel='stylesheet'>
+        <link rel="stylesheet" href="themes/base/jquery.ui.all.css">
     </head>
     <body>
         <?php
         include "koneksi/koneksi.php";
         //        menampilkan pesan jika ada pesan
         if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
-            echo '<div class="pesan" align="center">' . $_SESSION['pesan'] . '</div>';
+            echo '<div class="pesan" align="center"><p style="color:#FFF;font-size:16px">' . $_SESSION['pesan'] . '</p></div>';
         }
         //        mengatur session pesan menjadi kosong
         $_SESSION['pesan'] = '';
@@ -58,20 +59,20 @@ session_start();
                     <div class="span9">
                         <div class="content">
                             <div class="module">
-                           
-                                <form class="form-vertical"  action="query/simpanBarang.php" method="POST" name="form" enctype="multipart/form-data">
+
+                                <form class="form-vertical"  action="query/simpanBarang.php" method="POST" name="form" enctype="multipart/form-data" onsubmit="return validasi()">
                                     <div class="module-head">
                                         <h3>Tambah Data Inventaris</h3>
                                     </div>
                                     <div class="module-body">
-                                    	<div class="control-group">
+                                        <div class="control-group">
                                             <div class="controls row-fluid">
-                                                <input class="span12" type="text" name="serial_num" placeholder="Serial Number">
+                                                <input class="span12" type="text" name="serial_num" placeholder="Serial Number" required>
                                             </div>
                                         </div>
                                         <div class="control-group">
                                             <div class="controls row-fluid">
-                                                <input class="span12" type="text" name="nama" placeholder="Nama">
+                                                <input class="span12" type="text" name="nama" placeholder="Nama" required>
                                             </div>
                                         </div>
                                         <div class="control-group">
@@ -86,7 +87,7 @@ session_start();
                                         </div>
                                         <div class="control-group">
                                             <div class="controls row-fluid">
-                                                <input class="span12" type="text" name="type" placeholder="Type">
+                                                <input class="span12" data-format="yyyy-MM-dd" name="type" placeholder="Tanggal Produksi" type="text" id="datepicker">
                                             </div>
                                         </div>
                                         <div class="control-group">
@@ -103,12 +104,12 @@ session_start();
                                     <div class="module-foot">
                                         <div class="control-group">
                                             <div class="controls clearfix">
-                                                <button type="submit" class="btn btn-warning pull-right">Simpan</button>
+                                                <button type="submit" class="btn btn-danger" pull-right">Simpan</button>
                                             </div>
                                         </div>
                                     </div>
                                 </form>
-                            
+
                             </div><!--/.module-->
 
                             <br />
@@ -133,5 +134,32 @@ session_start();
         <script src="scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="scripts/common.js" type="text/javascript"></script>
         <script src="scripts/jquery.min.js"></script>
+        <script language="JavaScript" type="text/javascript">
+                                    function validasi() {
+                                        var strip2 = document.form.serial_num;
+                                        var strip1 = document.forms['form']['serial_num'].value;
+                                        var stripos = strip1.indexOf('-');
+                                        var strippos = strip1.lastIndexOf("-");
+
+                                        if (stripos < 1 || stripos + 1 >= strip1.length) {
+                                            alert("Serial Number harus mengandung '-' (Strip) Untuk Menggabungkan Kode Lab dan Kode Barang Contoh : FD-A01");
+                                            strip2.focus();
+                                            return (false);
+                                        }
+                                        return (true);
+                                    }
+        </script>
+        <script src="js/jquery-1.7.2.js"></script>
+        <script src="ui/jquery.ui.core.js"></script>
+        <script src="ui/jquery.ui.widget.js"></script>
+        <script src="ui/jquery.ui.datepicker.js"></script>
+        <script>
+                                    $(function () {
+                                        $("#datepicker").datepicker({
+                                            changeMonth: true,
+                                            changeYear: true
+                                        });
+                                    });
+        </script>
     </body>
 </html>

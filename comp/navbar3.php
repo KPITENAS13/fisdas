@@ -67,12 +67,23 @@ $r3 = mysql_fetch_array($h3);
                         </li>
                         <?php
                         if (!empty($r1)) {
-                            echo "<li><a href='#' data-toggle='modal' data-target='#KoorLabModal'>Koordinator Laboratorium</a></li>";
+                            echo "<li><a href='#' data-toggle='modal' data-target='#KoorLabModal'>Kepala Laboratorium</a></li>";
                         }
                         ?>
                         <?php
                         if (!empty($r2)) {
                             echo "<li><a href='#' data-toggle='modal' data-target='#KoorPrakModal'>Koordinator Praktikum</a></li>";
+                            $notifp = mysql_query("select count(*) as jumlah from req_perbaikan where status = 'Belum Diperbaiki'");
+                            $nfp = mysql_fetch_array($notifp);
+                            echo "<li>
+                                    <a href='koorlab_perbaikan_alat.php'>
+                                        Perbaikan Alat ";
+                                        if ($nfp['jumlah'] != 0) {
+                                            echo "<span class='badge'>" . $nfp['jumlah'] . "</span>";
+                                        }
+                                    echo"
+                                    </a>
+                                </li>";
                         }
                         ?>
                         <li><a href="#" data-toggle="modal" data-target="#PeminjamanModal">Peminjaman</a></li>
@@ -101,15 +112,7 @@ $r3 = mysql_fetch_array($h3);
                             <div class="controls">
                                 <select tabindex="1" data-placeholder="Select here.." class="form-control" name="praktikum" id="pra">
                                     <option value="">Select here..</option>
-                                    <option value="PEMDAS">Pemrograman Dasar</option>
-                                    <option value="ORKOM">Organisasi & Arsitektur Komputer</option>
-                                    <option value="PRC">Pemrograman Robot Cerdas</option>
-                                    <option value="JST">Jaringan Syaraf Tiruan</option>
-                                    <option value="JARKOM">Jaringan Komputer</option>
-                                    <option value="REKWEB">Rekayasa Web</option>
-                                    <option value="BASDAT">Basis Data</option>
-                                    <option value="PBD">Pemrograman Basis Data</option>
-                                    <option value="PBO">Pemrograman Berorientasi Objek</option>
+                                    <option value="FISDAS">Fisika Dasar</option>
                                 </select>
                             </div>
                         </div>
@@ -135,11 +138,11 @@ $r3 = mysql_fetch_array($h3);
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <script>
-    function gotopage(){
+    function gotopage() {
         var praktikum = document.getElementById("pra").value;
         var periode = document.getElementById("per").value;
-        var path = "koordinator_lab.php?kategori="+praktikum+"&&periode="+periode;
-        window.location.href=path;
+        var path = "koordinator_lab.php?kategori=" + praktikum + "&&periode=" + periode;
+        window.location.href = path;
     }
 </script>
 

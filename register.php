@@ -14,7 +14,9 @@
         <link href="css/animate.min.css" rel="stylesheet">
         <link href="css/main.css" rel="stylesheet">
         <link href="css/responsive.css" rel="stylesheet">
-        
+        <link rel="stylesheet" href="admin/themes/base/jquery.ui.all.css">
+
+
         <!-- core JS POPOVER -->
         <script src="js/jquery.js"></script>
         <script src="js/jquery-1.8.3.min.js"></script>
@@ -75,7 +77,8 @@
                 {
                     document.getElementById("uploadPreview").src = oFREvent.target.result;
                 };
-            };
+            }
+            ;
         </script>
     </head><!--/head-->
 
@@ -111,8 +114,8 @@
                                 <div class="input-group">
                                     <input type="text" name="kode" class="form-control" required="required" maxlength="9" placeholder="Masukkan NRP" autofocus>
                                     <span class="input-group-addon" data-toggle="popover" tabindex="1" data-trigger="hover" title="Informasi" data-content=" 
-                                        &bull;&nbsp;Panjang harus 9 digit
-                                        &bull;&nbsp;Mis. 112013001" >
+                                          &bull;&nbsp;Panjang harus 9 digit
+                                          &bull;&nbsp;Mis. 112013001" >
                                         <span class="glyphicon glyphicon-info-sign"></span>
                                     </span>
                                 </div>
@@ -122,9 +125,9 @@
                                 <div class="input-group">
                                     <input type="password" name="sandi" class="form-control" required="required" maxlength="6" placeholder="Masukkan Kata Sandi">
                                     <span class="input-group-addon" data-toggle="popover" tabindex="2" data-trigger="hover" title="Informasi" data-content="
-                                        &bull;&nbsp;Kata sandi berupa angka
-                                        &bull;&nbsp;Panjang harus 6 digit
-                                        &bull;&nbsp;Nomor PIN KSM">
+                                          &bull;&nbsp;Kata sandi berupa angka
+                                          &bull;&nbsp;Panjang harus 6 digit
+                                          &bull;&nbsp;Nomor PIN KSM">
                                         <span class="glyphicon glyphicon-info-sign"></span>
                                     </span>
                                 </div>
@@ -156,7 +159,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Tanggal Lahir *</label>
-                                <input type="date" class="form-control" name="tgl" required="required">
+                                <input type="text" class="form-control" name="tgl" required="required" placeholder="Tanggal Lahir" id="datepicker">
                             </div>
                             <div class="form-group">
                                 <label>No. HP *</label>
@@ -179,10 +182,22 @@
             <?php include './comp/footer.php'; ?>
         </footer><!--/#footer-->
 
-        
+
         <script src="js/jquery.prettyPhoto.js"></script>
         <script src="js/jquery.isotope.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/wow.min.js"></script>
+        <script src="admin/js/jquery-1.7.2.js"></script>
+        <script src="admin/ui/jquery.ui.core.js"></script>
+        <script src="admin/ui/jquery.ui.widget.js"></script>
+        <script src="admin/ui/jquery.ui.datepicker.js"></script>
+        <script>
+                                        $(function () {
+                                            $("#datepicker").datepicker({
+                                                changeMonth: true,
+                                                changeYear: true
+                                            });
+                                        });
+        </script>
     </body>
 </html>

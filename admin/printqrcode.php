@@ -70,7 +70,7 @@ session_start();
                                                 <th>Status</th>
                                                 <th>Developer</th>
                                                 <th>Lokasi</th>
-                                                <th>Type</th>
+                                                <th>Tanggal Produksi</th>
                                                 <th>Model</th>
                                                 <th>No. Pelabelan</th>
                                                 <th>------</th>
@@ -88,11 +88,11 @@ session_start();
                                                         <td align=center>$r[status]</td>
                                                         <td align=center>$r[developer]</td>
                                                         <td align=center>$r[lokasi]</td>
-                                                        <td align=center>$r[type]</td>
+                                                        <td align=center>$r[tanggal_produksi]</td>
                                                         <td align=center>$r[model]</td>
                                                         <td align=center>$r[no_pelabelan]</td>
                                                         <td align=center>
-                                                            <a href='gen-qrcode.php?serial=$r[serial_num]'><button class='btn btn-warning pull-right'>Generate</button></a>
+                                                            <a href='gen-qrcode.php?serial=$r[serial_num]'><button class='btn btn-danger pull-right'>Generate</button></a>
 							</td>
                                                     </tr>";
                                             }
@@ -105,7 +105,7 @@ session_start();
                                                 <th>Status</th>
                                                 <th>Developer</th>
                                                 <th>Lokasi</th>
-                                                <th>Type</th>
+                                                <th>Tanggal Produksi</th>
                                                 <th>Model</th>
                                                 <th>No. Pelabelan</th>
                                                 <th>------</th>

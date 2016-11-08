@@ -98,7 +98,7 @@ function printDiv(elementId) {
                                                         <tr><th>Status</th><td align=center><?php echo $r['status'] ?></td></tr>
                                                         <tr><th>Developer</th><td align=center><?php echo $r['developer'] ?></td></tr>
                                                         <tr><th>Lokasi</th><td align=center><?php echo $r['lokasi'] ?></td></tr>
-                                                        <tr><th>Type</th><td align=center><?php echo $r['type'] ?></td></tr>
+                                                        <tr><th>Tanggal Produksi</th><td align=center><?php echo $r['tanggal_produksi'] ?></td></tr>
                                                         <tr><th>Model</th><td align=center><?php echo $r['model'] ?></td></tr>
                                                         <tr><th>No. Pelabelan</th><td align=center><?php echo $r['no_pelabelan'] ?></td></tr>
                                         <?php                
@@ -109,7 +109,7 @@ function printDiv(elementId) {
                                 <div class="module-foot">
                                     <div class="control-group">
                                         <div class="controls clearfix">
-                                            <a class="no-print" href="javascript:printDiv('area-1');"><button type="submit" class="btn btn-warning pull-right">Print</button></a>
+                                            <a class="no-print" href="javascript:printDiv('area-1');"><button type="submit" class="btn btn-danger" pull-right">Print</button></a>
                                         </div>
                                     </div>
                                 </div>

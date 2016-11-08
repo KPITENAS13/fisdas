@@ -9,7 +9,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Koor. Laboratorium | Lab IF</title>
+        <title>Kepala Laboratorium | Lab Fisika</title>
 
         <!-- core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -48,32 +48,16 @@ session_start();
         <section id="feature">
             <div class="center wow fadeInDown">
                 <h2>
-                    Koordinator Laboratorium 
+                    Kepala Laboratorium 
                     <?php
-                    if ($_GET['kategori'] == "PEMDAS") {
-                        echo 'Pemrograman Dasar';
-                    } else if ($_GET['kategori'] == "ORKOM") {
-                        echo 'Organisasi & Arsitektur Komputer';
-                    } else if ($_GET['kategori'] == "PBD") {
-                        echo 'Pemrograman Basis Data';
-                    } else if ($_GET['kategori'] == "PRC") {
-                        echo 'Pemrograman Robot Cerdas';
-                    } else if ($_GET['kategori'] == "JARKOM") {
-                        echo 'Jaringan Komputer';
-                    } else if ($_GET['kategori'] == "REKWEB") {
-                        echo 'Rekayasa Web';
-                    } else if ($_GET['kategori'] == "JST") {
-                        echo 'Jaringan Syaraf Tiruan';
-                    } else if ($_GET['kategori'] == "BASDAT") {
-                        echo 'Basis Data';
-                    } else if ($_GET['kategori'] == "PBO") {
-                        echo 'Pemrograman Berorientasi Objek';
+                    if ($_GET['kategori'] == "FISDAS") {
+                        echo 'Fisika Dasar';
                     }
                     echo ' Periode ' . $_GET['periode'];
                     ?>
                 </h2>
                 <p class="lead">
-                    Pusat informasi kegiatan praktikum Laboratorium Teknik Informatika ITENAS
+                    Pusat informasi kegiatan praktikum Laboratorium Fisika ITENAS
                 </p>
             </div>
             <div class="container">
@@ -83,17 +67,20 @@ session_start();
                             <div class="media">
                                 <div class="parrent pull-left">
                                     <ul class="nav nav-tabs nav-stacked">
-                                        <li class="active"><a href="#tab6" data-toggle="tab" class="analistic-01">Koordinator</a></li>
-                                        <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Daftar Asisten</a></li>
-                                        <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Daftar Praktikan</a></li>
+                                        <li class="active"><a href="#tab6" data-toggle="tab" class="tehnical">Koordinator</a></li>
+                                        <li class=""><a href="#tab8" data-toggle="tab" class="tehnical">Berita Acara</a></li>
+                                        <li class=""><a href="#tab7" data-toggle="tab" class="tehnical">Komponen Nilai</a></li>
+                                        <li class=""><a href="#tab2" data-toggle="tab" class="tehnical">Daftar Praktikan</a></li>
                                         <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Nilai Harian Praktikan</a></li>
-                                        <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Pendaftaran Asisten</a></li>
+                                        <li class=""><a href="#tab1" data-toggle="tab" class="tehnical">Pendaftaran Asisten</a></li>
+                                        <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Daftar Asisten</a></li>
                                         <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">Modul & Jobsheet</a></li>
                                     </ul>
                                 </div>
 
                                 <div class="parrent media-body">
                                     <div class="tab-content">
+                                        <!--Koordinator-->
                                         <div class="tab-pane active in" id="tab6">
                                             <div class="row contact-wrap">
                                                 <div class="col-md-4 ">
@@ -108,6 +95,40 @@ session_start();
                                             </div>
                                         </div>
 
+                                        <!--Berita Acara-->
+                                        <div class="tab-pane active in" id="ta8">
+                                            <div class="row contact-wrap">
+                                                <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="tabel2" width="100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                NRP
+                                                            </th>
+                                                            <th>
+                                                                Berita Acara
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php
+                                                        include './query/tabel_praktikum3.php';
+                                                        ?>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>
+                                                                Tanggal
+                                                            </th>
+                                                            <th>
+                                                                Berita Acara
+                                                            </th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <!--Pendaftaran Asisten-->
                                         <div class="tab-pane" id="tab1" align="center">
                                             <button type="button" class="btn btn-default" style="margin-bottom: 2%; float: left;" onclick="asisten_req()"><span class="glyphicon glyphicon-refresh"></span> Refresh
                                             </button>
@@ -118,19 +139,17 @@ session_start();
                                             <div id="req_asisten" align="center"></div>
                                         </div>
 
+                                        <!--Komponen Nilai-->
+                                        <div class="tab-pane" id="tab7" align="center">
+                                            <h4><b>Komponen dan Presentase Nilai</b></h4>
+                                            <div id="presentase"></div>
+                                            <hr>
+                                            <h4><b>Komponen dan Presentase Tugas</b></h4>
+                                            <div id="presentase2"></div>
+                                        </div>
+
+                                        <!--Nilai Praktikan-->
                                         <div class="tab-pane" id="tab2">
-                                            <b>Presentase Nilai</b>
-                                            <div id="presentase">
-                                                <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="tabel5" width="100%">
-                                                    <tr align="center">
-                                                        <td>Nilai Harian</td>
-                                                        <td>Nilai Absensi</td>
-                                                        <td>Nilai UTS</td>
-                                                        <td>Nilai UAS</td>
-                                                        <td>Nilai Project</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
                                             <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="tabel2" width="100%">
                                                 <thead>
                                                     <tr>
@@ -203,9 +222,8 @@ session_start();
                                             <p>(* NH = Nilai Harian)</p>
                                         </div>
 
+                                        <!--Nilai Harian-->
                                         <div class="tab-pane" id="tab3">
-                                            <div id="presentase2"></div>
-                                            <hr>
                                             <div class="form-inline" align="center">
                                                 <input type="text" class="form-control nrp" id="nrp" placeholder="NRP Peserta" style="width: 30%;">
                                                 <input type="hidden" id="periode" value="<?php echo $_GET['periode'] ?>">
@@ -235,11 +253,13 @@ session_start();
                                             </div>
                                         </div>
 
+                                        <!--Daftar Asistenn-->
                                         <div class="tab-pane" id="tab4">
                                             <div id="data_koor" align="center"></div>
                                             <div id="data_asisten" align="center"></div>
                                         </div>
 
+                                        <!--Modul dan Jobsheet-->
                                         <div class="tab-pane" id="tab5">
                                             <br>
                                             <div class="col-sm-6 col-md-6">
@@ -270,6 +290,7 @@ session_start();
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div> <!--/.tab-content-->  
                                 </div> <!--/.media-body--> 
                             </div> <!--/.media-->     

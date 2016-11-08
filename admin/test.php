@@ -73,9 +73,9 @@ session_start();
                                   <tbody>
 
                                   <?php
-
+                                  $id = $_GET['id'];
                                   include "koneksi.php";
-                                  $tampil = mysql_query("select * from ks_nilaipraktikan where id_ksnilai = '1'");
+                                  $tampil = mysql_query("select * from ks_nilaipraktikan where id_ksnilai = '$id'");
                                   while ($r = mysql_fetch_array($tampil)) {
 
                                     if($r['ks1a']==0){
@@ -533,19 +533,41 @@ session_start();
                                     </tr>
                                      </tbody>
                                 </table>
-                                <br>
-                                 
-                                    <div class='control-group'>
-                                            <div class='control pull-right'>
-                                                <button type='submit' class='btn btn-success'>Next</button>  
-                                            </div>
-                                    </div>
+                                <br>";
+                                }
+                                echo "<div class='control-group'>";
+                                $tampil2 = mysql_query("select count(*) as total from ks_nilaipraktikan");
+                                $r2 = mysql_fetch_array($tampil2);
+                                if ($id != $r2['total']){
+                                    $id++;
+                                    echo"
+                                        <div class='control pull-right'>
+                                            <a href='test.php?id=$id' type='submit' class='btn btn-success'>Next</a>  
+                                        </div>
+                                    "; 
+                                }else{
+                                    echo"
+                                        <div class='control pull-right'>
+                                            <button type='submit' class='btn btn-success' disabled>Next</button>  
+                                        </div>
                                     "; 
                                 }
-                                    ?>
-                                    
-                                    
-                                  
+                                if ($_GET['id'] != 1){
+                                    $id = $id - 2;
+                                    echo"
+                                        <div class='control pull-left'>
+                                            <a href='test.php?id=$id' type='submit' class='btn btn-success'>Prev</a>  
+                                        </div>
+                                    "; 
+                                }else{
+                                    echo"
+                                        <div class='control pull-left'>
+                                            <button type='submit' class='btn btn-success' disabled>Prev</button>  
+                                        </div>
+                                    "; 
+                                }
+                                echo "</div>";
+                                    ?>                                  
                                   </tbody>
                                 </table>
                                 <br>

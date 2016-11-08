@@ -28,7 +28,8 @@ if ($uploadOk == 0) {
         mysql_query("INSERT INTO file 
         (nama_file,tanggal_upload,kategori,path)VALUES 
         ('$nama_file','$tanggal','$kategori','$path')");
-        header("location:../koordinator.php?kategori=$praktikum&&periode=$periode");
+        //header("location:../koordinator.php?kategori=$praktikum&&periode=$periode");
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     } else {
         echo "Sorry, there was an error uploading your file.";
     }

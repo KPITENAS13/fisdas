@@ -13,7 +13,6 @@ while ($r = mysql_fetch_array($q)) {
             <td>$r[nrp]</td>
             <td>$r[nama]</td>
             <td align='center'>$r[kelas]</td>
-            <td>$r[total]</td>
         </tr>";
 }
 ?>

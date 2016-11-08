@@ -16,10 +16,10 @@ session_start();
     </head>
     <body>
         <?php
-                include "koneksi/koneksi.php";
+        include "koneksi/koneksi.php";
         //        menampilkan pesan jika ada pesan
-                if(isset($_SESSION['pesan'] ) && $_SESSION['pesan'] <> '') {
-        echo '<div class="pesan" align="center">' . $_SESSION['pesan'] . '</div>';
+        if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
+            echo '<div class="pesan" align="center"><p style="color:#FFF;font-size:16px">' . $_SESSION['pesan'] . '</p></div>';
         }
         //        mengatur session pesan menjadi kosong
         $_SESSION['pesan'] = '';
@@ -28,9 +28,9 @@ session_start();
             <div class="navbar-inner">
                 <?php
                 if (empty($_SESSION['username'])) {
-                include './components/navbar1.php';
+                    include './components/navbar1.php';
                 } else {
-                include './components/navbar2.php';
+                    include './components/navbar2.php';
                 }
                 ?>
             </div>
@@ -43,13 +43,13 @@ session_start();
                     <div class="span3">
                         <?php
                         if (empty($_SESSION['kategori'])) { //kategori kosong = guest
-                        include './components/sidebar1.php';
+                            include './components/sidebar1.php';
                         } else if ($_SESSION['kategori'] == "admin") { //jika admin yang masuk
-                        include './components/sidebar4.php';
+                            include './components/sidebar4.php';
                         } else if ($_SESSION['kategori'] == "dosen") { //jika dosen yang masuk
-                        include './components/sidebar2.php';
+                            include './components/sidebar2.php';
                         } else if ($_SESSION['kategori'] == "mahasiswa") { //jika mahasiswa yang masuk
-                        include './components/sidebar3.php';
+                            include './components/sidebar3.php';
                         }
                         ?>
                         <!--/.sidebar-->
@@ -70,7 +70,7 @@ session_start();
                                                 <th>Status</th>
                                                 <th>Developer</th>
                                                 <th>Lokasi</th>
-                                                <th>Type</th>
+                                                <th>Tanggal Produksi</th>
                                                 <th>Model</th>
                                                 <th>No. Pelabelan</th>
                                                 <th>-----</th>
@@ -81,7 +81,7 @@ session_start();
                                             include "koneksi/koneksi.php";
                                             $tampil = mysql_query("select * from barang order by serial_num");
                                             while ($r = mysql_fetch_array($tampil)) {
-                                            echo"
+                                                echo"
                                                     <form action=homeweb_LihatDetailProduk.php method=GET>
                                                     <tr>
                                                         <input type=hidden name=serial_num value=$r[serial_num]>
@@ -91,10 +91,10 @@ session_start();
                                                         <td align=center>$r[status]</td>
                                                         <td align=center>$r[developer]</td>
                                                         <td align=center>$r[lokasi]</td>
-                                                        <td align=center>$r[type]</td>
+                                                        <td align=center>$r[tanggal_produksi]</td>
                                                         <td align=center>$r[model]</td>
                                                         <td align=center>$r[no_pelabelan]</td>
-                                                        <td align=center><a href=query/hapusBarang.php?serial_num=$r[serial_num]><button class=btn-warning>Hapus</button></a></td>
+                                                        <td align=center><a href=query/hapusBarang.php?serial_num=$r[serial_num]><button class='btn btn-danger'>Hapus</button></a></td>
                                                         </tr>
                                                     </form>";
                                             }
@@ -107,7 +107,7 @@ session_start();
                                                 <th>Status</th>
                                                 <th>Developer</th>
                                                 <th>Lokasi</th>
-                                                <th>Type</th>
+                                                <th>Tanggal Produksi</th>
                                                 <th>Model</th>
                                                 <th>No. Pelabelan</th>
                                                 <th>----</th>
