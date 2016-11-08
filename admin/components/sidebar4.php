@@ -21,7 +21,7 @@ $_SESSION['pesan'] = '';
                     $nfp2 = mysql_fetch_array($notifp2);
                     $notifp3 = mysql_query("select count(*) as jumlah from requestpenelitian where status='Approve' and tanggal_batas='$Date' and pengingat='Y'");
                     $nfp3 = mysql_fetch_array($notifp3);
-                    $result = $nfp1['jumlah'] + $nfp2['jumlah']+ $nfp3['jumlah'];
+                    $result = $nfp1['jumlah'] + $nfp2['jumlah'] + $nfp3['jumlah'];
                     echo $result;
                     ?></b>
                 Notifikasi
@@ -49,11 +49,7 @@ $_SESSION['pesan'] = '';
                         Penelitian
                     </a>
                 </li>
-<<<<<<< HEAD
-		<li>
-=======
                 <li>
->>>>>>> fb6cc873598c4fd8b90b62cef708a7e6306cfdf2
                     <a href="PengingatPeminjamanPenelitian.php">
                         <i class="icon-check pull-right"></i>
                         <b class="label orange"><?php
@@ -79,11 +75,7 @@ $_SESSION['pesan'] = '';
                 Permintaan Perbaikan
             </a>
         </li>
-<<<<<<< HEAD
-	<li>
-=======
         <li>
->>>>>>> fb6cc873598c4fd8b90b62cef708a7e6306cfdf2
             <a href="berita_acara.php">
                 <i class="menu-icon icon-barcode"></i>
                 Berita Acara
