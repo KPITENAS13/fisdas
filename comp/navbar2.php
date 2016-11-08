@@ -38,6 +38,8 @@ $r2 = mysql_fetch_array($q2);
                         <li><a href="info_jadwal_praktikum.php">Jadwal Praktikum</a></li>
                         <li><a href="arsip.php">Modul & Jobsheet</a></li>                        
                         <li><a href="praktikum.php">Praktikum</a></li>
+                        <li><a href="userP_evaluasikuesioner.php">Kuesioner Praktikan</a></li>
+                        <li><a href="userA_evaluasikuesioner.php">Kuesioner Asisten</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

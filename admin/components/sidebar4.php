@@ -46,6 +46,18 @@ $_SESSION['pesan'] = '';
                         Penelitian
                     </a>
                 </li>
+		<li>
+                    <a href="PengingatPeminjamanPenelitian.php">
+                        <i class="icon-check pull-right"></i>
+                        <b class="label orange"><?php
+                            $Date = date("Y-m-d");
+                            $notifp = mysql_query("select count(*) as jumlah from requestpenelitian where status='Approve' and tanggal_batas ='$Date' and pengingat='Y'");
+                            $nfp = mysql_fetch_array($notifp);
+                            echo $nfp['jumlah'];
+                            ?></b>
+                        Peminjaman Alat
+                    </a>
+                </li>
             </ul>
         </li>
         <li>
@@ -58,6 +70,12 @@ $_SESSION['pesan'] = '';
             <a href="PermintaanPerbaikan.php">
                 <i class="menu-icon icon-barcode"></i>
                 Permintaan Perbaikan
+            </a>
+        </li>
+	<li>
+            <a href="berita_acara.php">
+                <i class="menu-icon icon-barcode"></i>
+                Berita Acara
             </a>
         </li>
     </ul>
@@ -114,6 +132,9 @@ $_SESSION['pesan'] = '';
         <li><a href="praktikum.php"><i class="menu-icon icon-lightbulb"></i> Kepala Laboratorium </a></li>
         <li><a href="admin_info_jadwal_praktikum.php"><i class="menu-icon icon-table"></i> Jadwal Praktikum </a></li>
         <li><a href="admin_info_topik_TA.php"><i class="menu-icon icon-list-alt"></i> Topik TA </a></li>
+        <li><a href="admin_dataevaluasikuesionerP.php?id_ksnilai=1"><i class="menu-icon icon-list-alt"></i> Evaluasi & Kuesioner Praktikan </a></li>
+        <li><a href="admin_dataevaluasikuesionerA.php?id_ksnilai=1"><i class="menu-icon icon-list-alt"></i> Evaluasi & Kuesioner Asisten </a></li>
+
     </ul>
     <!--/.widget-nav-->
     <ul class="widget widget-menu unstyled">
