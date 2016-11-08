@@ -98,7 +98,7 @@ function printDiv(elementId) {
                                                         <tr><th>Status</th><td align=center><?php echo $r['status'] ?></td></tr>
                                                         <tr><th>Developer</th><td align=center><?php echo $r['developer'] ?></td></tr>
                                                         <tr><th>Lokasi</th><td align=center><?php echo $r['lokasi'] ?></td></tr>
-                                                        <tr><th>Type</th><td align=center><?php echo $r['type'] ?></td></tr>
+                                                        <tr><th>Tanggal Produksi</th><td align=center><?php echo $r['tanggal_produksi'] ?></td></tr>
                                                         <tr><th>Model</th><td align=center><?php echo $r['model'] ?></td></tr>
                                                         <tr><th>No. Pelabelan</th><td align=center><?php echo $r['no_pelabelan'] ?></td></tr>
                                         <?php                

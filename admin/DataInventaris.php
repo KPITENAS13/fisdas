@@ -70,7 +70,7 @@ session_start();
                                                 <th>Status</th>
                                                 <th>Developer</th>
                                                 <th>Lokasi</th>
-                                                <th>Type</th>
+                                                <th>Tanggal Produksi</th>
                                                 <th>Model</th>
                                                 <th>Last Update</th>
                                                 <th>No. Pelabelan</th>
@@ -90,7 +90,7 @@ session_start();
                                                         <td align=center>$r[status]</td>
                                                         <td align=center>$r[developer]</td>
                                                         <td align=center>$r[lokasi]</td>
-                                                        <td align=center>$r[type]</td>
+                                                        <td align=center>$r[tanggal_produksi]</td>
                                                         <td align=center>$r[model]</td>
                                                         <td align=center>$r[last_update]</td>
                                                         <td align=center>$r[no_pelabelan]</td>
@@ -106,7 +106,7 @@ session_start();
                                                 <th>Status</th>
                                                 <th>Developer</th>
                                                 <th>Lokasi</th>
-                                                <th>Type</th>
+                                                <th>Tanggal Produksi</th>
                                                 <th>Model</th>
                                                 <th>Last Update</th>
                                                 <th>No. Pelabelan</th>                                    

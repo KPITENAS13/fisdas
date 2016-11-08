@@ -7,7 +7,7 @@ mysql_query("UPDATE barang SET
 nama='$_POST[nama]',
 developer='$_POST[developer]',
 lokasi='$_POST[lokasi]',
-type='$_POST[type]', 
+tanggal_produksi='$_POST[type]', 
 model='$_POST[model]', 
 no_pelabelan='$_POST[no_pelabelan]',
 last_update='$Date $Time'

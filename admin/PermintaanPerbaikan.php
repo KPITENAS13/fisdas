@@ -66,7 +66,8 @@ session_start();
                                     <div class="module-body">
                                         <div class="control-group">
                                             <div class="controls row-fluid">
-                                                <input class="span4" type="text" name="serial_num" placeholder="Serial Number" required>
+                                                <input class="span4" type="text" id="hasilAlat" name="serial_num" placeholder="Serial Number" required>
+                                                <button href=# class="btn btn-danger" data-toggle="modal" data-target="#AlatModal" data-keyboard="false" data-backdrop="static">Pilih</button>
                                             </div>
                                         </div>
                                         <div class="control-group">
@@ -109,19 +110,26 @@ session_start();
         <script src="scripts/common.js" type="text/javascript"></script>
         <script src="scripts/jquery.min.js"></script>
         <script language="JavaScript" type="text/javascript">
-            function validasi() {
-                var strip2 = document.form.serial_num;
-                var strip1 = document.forms['form']['serial_num'].value;
-                var stripos = strip1.indexOf('-');
-                var strippos = strip1.lastIndexOf("-");
+                                    function validasi() {
+                                        var strip2 = document.form.serial_num;
+                                        var strip1 = document.forms['form']['serial_num'].value;
+                                        var stripos = strip1.indexOf('-');
+                                        var strippos = strip1.lastIndexOf("-");
 
-                if (stripos < 1 || stripos + 1 >= strip1.length) {
-                    alert("Serial Number harus mengandung '-' (Strip) Untuk Menggabungkan Kode Lab dan Kode Barang Contoh : FD-A01");
-                    strip2.focus();
-                    return (false);
-                }
-                return (true);
-            }
+                                        if (stripos < 1 || stripos + 1 >= strip1.length) {
+                                            alert("Serial Number harus mengandung '-' (Strip) Untuk Menggabungkan Kode Lab dan Kode Barang Contoh : FD-A01");
+                                            strip2.focus();
+                                            return (false);
+                                        }
+                                        return (true);
+                                    }
         </script>
     </body>
+
+    <!--<div class="modal fade" id="aa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       
+    </div> -->
+    <div class="modal fade hide" id="AlatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <?php include '../modalAlat/MasukanAlat.php'; ?>
+    </div>
 </html>

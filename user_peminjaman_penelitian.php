@@ -138,52 +138,52 @@ session_start();
                                             <label for='basicinput' class='col-sm-2 control-label'>Alat Ke-1</label>
                                             <div class='col-sm-10 input-group'>
                                                <input type=text id=hasilAlat1 placeholder='Masukkan Nama Alat' name=txt1 onChange='cekTxt1();' class='form-control' required> 
-                                               <a href=# class='input-group-addon btn-danger' data-toggle='modal' data-target='#Alat1Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></a>
+                                               <a class='input-group-addon btn-danger'><button type=button id='btn1' data-toggle='modal' data-target='#Alat1Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></button></a>
                                             </div>
                                             <label for='basicinput' class='col-sm-2 control-label'>Alat Ke-2</label>
                                             <div class='col-sm-10 input-group'>
                                                <input type=text id=hasilAlat2 placeholder='Masukkan Nama Alat' name=txt2 onChange='cekTxt2();' class='form-control' disabled=true> 
-                                               <a href=# class='input-group-addon btn-danger' data-toggle='modal' data-target='#Alat2Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></a>
+                                               <a class='input-group-addon btn-danger'><button type=button disabled id='btn2' data-toggle='modal' data-target='#Alat2Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></button></a>
                                             </div>
                                             <label for='basicinput' class='col-sm-2 control-label'>Alat Ke-3</label>
                                             <div class='col-sm-10 input-group'>
                                                <input type=text id=hasilAlat3 placeholder='Masukkan Nama Alat' name=txt3 onChange='cekTxt3();' class='form-control' disabled=true> 
-                                               <a href=# class='input-group-addon btn-danger' data-toggle='modal' data-target='#Alat3Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></a>
+                                               <a class='input-group-addon btn-danger'><button type=button disabled id='btn3' data-toggle='modal' data-target='#Alat3Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></button></a>
                                             </div>
                                             <label for='basicinput' class='col-sm-2 control-label'>Alat Ke-4</label>
                                             <div class='col-sm-10 input-group'>
                                                <input type=text id=hasilAlat4 placeholder='Masukkan Nama Alat' name=txt4 onChange='cekTxt4();' class='form-control' disabled=true> 
-                                               <a href=# class='input-group-addon btn-danger' data-toggle='modal' data-target='#Alat4Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></a>
+                                               <a class='input-group-addon btn-danger'><button type=button disabled id='btn4' data-toggle='modal' data-target='#Alat4Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></button></a>
                                             </div>
                                             <label for='basicinput' class='col-sm-2 control-label'>Alat Ke-5</label>
                                             <div class='col-sm-10 input-group'>
                                                <input type=text id=hasilAlat5 placeholder='Masukkan Nama Alat' name=txt5 onChange='cekTxt5();' class='form-control' disabled=true> 
-                                               <a href=# class='input-group-addon btn-danger' data-toggle='modal' data-target='#Alat5Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></a>
+                                               <a class='input-group-addon btn-danger'><button type=button disabled id='btn5' data-toggle='modal' data-target='#Alat5Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></button></a>
                                             </div>
                                             <label for='basicinput' class='col-sm-2 control-label'>Alat Ke-6</label>
                                             <div class='col-sm-10 input-group'>
                                                <input type=text id=hasilAlat6 placeholder='Masukkan Nama Alat' name=txt6 onChange='cekTxt6();' class='form-control' disabled=true> 
-                                               <a href=# class='input-group-addon btn-danger' data-toggle='modal' data-target='#Alat6Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></a>
+                                               <a class='input-group-addon btn-danger'><button type=button disabled id='btn6' data-toggle='modal' data-target='#Alat6Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></button></a>
                                             </div>
                                             <label for='basicinput' class='col-sm-2 control-label'>Alat Ke-7</label>
                                             <div class='col-sm-10 input-group'>
                                                <input type=text id=hasilAlat7 placeholder='Masukkan Nama Alat' name=txt7 onChange='cekTxt7();' class='form-control' disabled=true> 
-                                               <a href=# class='input-group-addon btn-danger' data-toggle='modal' data-target='#Alat7Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></a>
+                                               <a class='input-group-addon btn-danger'><button type=button disabled id='btn7' data-toggle='modal' data-target='#Alat7Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></button></a>
                                             </div>
                                             <label for='basicinput' class='col-sm-2 control-label'>Alat Ke-8</label>
                                             <div class='col-sm-10 input-group'>
                                                <input type=text id=hasilAlat8 placeholder='Masukkan Nama Alat' name=txt8 onChange='cekTxt8();' class='form-control' disabled=true> 
-                                               <a href=# class='input-group-addon btn-danger' data-toggle='modal' data-target='#Alat8Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></a>
+                                               <a class='input-group-addon btn-danger'><button type=button disabled id='btn8' data-toggle='modal' data-target='#Alat8Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></button></a>
                                             </div>
                                             <label for='basicinput' class='col-sm-2 control-label'>Alat Ke-9</label>
                                             <div class='col-sm-10 input-group'>
                                                <input type=text id=hasilAlat9 placeholder='Masukkan Nama Alat' name=txt9 onChange='cekTxt9();' class='form-control' disabled=true> 
-                                               <a href=# class='input-group-addon btn-danger' data-toggle='modal' data-target='#Alat9Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></a>
+                                               <a class='input-group-addon btn-danger'><button type=button disabled id='btn9' data-toggle='modal' data-target='#Alat9Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></button></a>
                                             </div>
                                             <label for='basicinput' class='col-sm-2 control-label'>Alat Ke-10</label>
                                             <div class='col-sm-10 input-group'>
                                                <input type=text id=hasilAlat10 placeholder='Masukkan Nama Alat' name=txt10 onChange='cekTxt10();' class='form-control' disabled=true> 
-                                               <a href=# class='input-group-addon btn-danger' data-toggle='modal' data-target='#Alat10Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></a>
+                                               <a class='input-group-addon btn-danger'><button type=button disabled id='btn10' data-toggle='modal' data-target='#Alat10Modal' data-keyboard='false' data-backdrop='static'><span>Pilih</span></button></a>
                                             </div>
                                         </div>	
                                     </div>
