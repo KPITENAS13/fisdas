@@ -6,46 +6,46 @@ $kdJur = substr($id, 0, 2);
 if($kdJur == "11"){
     $jurusan = "Teknik Elektro";
 }
-if($kdJur == "12"){
+else if($kdJur == "12"){
     $jurusan = "Teknik Mesin";
 }
-if($kdJur == "13"){
+else if($kdJur == "13"){
     $jurusan = "Teknik Industri";
 }
-if($kdJur == "14"){
+else if($kdJur == "14"){
     $jurusan = "Teknik Kimia";
 }
-if($kdJur == "15"){
+else if($kdJur == "15"){
     $jurusan = "Teknik Informatika";
 }
-if($kdJur == "16"){
+else if($kdJur == "16"){
     $jurusan = "Sistem Informasi";
 }
-if($kdJur == "21"){
+else if($kdJur == "21"){
     $jurusan = "Teknik Arsitektur";
 }
-if($kdJur == "22"){
+else if($kdJur == "22"){
     $jurusan = "Teknik Sipil";
 }
-if($kdJur == "23"){
+else if($kdJur == "23"){
     $jurusan = "Teknik Geodesi";
 }
-if($kdJur == "24"){
+else if($kdJur == "24"){
     $jurusan = "Perencanaan Wilayah dan Kota";
 }
-if($kdJur == "25"){
+else if($kdJur == "25"){
     $jurusan = "Teknik Lingkungan";
 }
-if($kdJur == "31"){
+else if($kdJur == "31"){
     $jurusan = "Desain Interior";
 }
-if($kdJur == "32"){
+else if($kdJur == "32"){
     $jurusan = "Desain Produk";
 }
-if($kdJur == "33"){
+else if($kdJur == "33"){
     $jurusan = "Desain Komunikasi Visual";
 } 
-if (($kdJur != "11") || ($kdJur != "12") || ($kdJur != "13") || ($kdJur != "14") || ($kdJur != "15") || ($kdJur != "16")
+else if (($kdJur != "11") || ($kdJur != "12") || ($kdJur != "13") || ($kdJur != "14") || ($kdJur != "15") || ($kdJur != "16")
          || ($kdJur != "21") || ($kdJur != "22") || ($kdJur != "23") || ($kdJur != "24") || ($kdJur != "25")
          || ($kdJur != "31") || ($kdJur != "32") || ($kdJur != "33")) {
     $jurusan = "JURUSAN TIDAK DIKENALI";
