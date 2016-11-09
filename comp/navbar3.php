@@ -41,6 +41,7 @@ $r3 = mysql_fetch_array($h3);
                         <li><a href="arsip.php">Arsip & Dokumentasi</a></li>
                         <li><a href="info_jadwal_praktikum.php">Jadwal Praktikum</a></li>
                         <li><a href="praktikum.php">Praktikum</a></li>
+                        <li><a href="userA_evaluasikuesioner.php">Kuesioner Asisten</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

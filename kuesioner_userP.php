@@ -75,8 +75,6 @@ $subtotal5=$_POST['subtotal5'];
 $total = $_POST['total'];
 $avarage = $_POST['avarage'];
 
-
-
 if($ks1a==''){
     $ks1a=0;
 }
@@ -387,28 +385,25 @@ if($ks10e==''){
 else{ 
     $ks10e=$ks10e;
 }
-
 ?>
 
  <?php
-   
     include koneksi.php;
-    
+    session_start();
+    //$id = $_SESSION[id];
+    $nrp = '';
+    $nrp = $_SESSION['kode'];
+    $mhs_praktikan = mysql_query("SELECT * FROM mahasiswa WHERE id = $nrp");
+    $row=  mysql_fetch_array($mhs_praktikan);
+    $jurusan = $row['jurusan'];
     $tahun = getdate();                         
     $subtotal1 = ($ks1a) + ($ks2a) + ($ks3a)  + ($ks4a) + ($ks5a) + ($ks6a) + ($ks7a) + ($ks8a) + ($ks9a) + ($ks10a);
     $subtotal2 = ($ks1b) + ($ks2b) + ($ks3b)  + ($ks4b) + ($ks5b) + ($ks6b) + ($ks7b) + ($ks8b) + ($ks9b) + ($ks10b);
     $subtotal3 = ($ks1c) + ($ks2c) + ($ks3c)  + ($ks4c) + ($ks5c) + ($ks6c) + ($ks7c) + ($ks8c) + ($ks9c) + ($ks10c);
     $subtotal4 = ($ks1d) + ($ks2d) + ($ks3d)  + ($ks4d) + ($ks5d) + ($ks6d) + ($ks7d) + ($ks8d) + ($ks9d) + ($ks10d);
-    $subtotal5 = ($ks1e) + ($ks2e) + ($ks3e)  + ($ks4e) + ($ks5e) + ($ks6e) + ($ks7e) + ($ks8e) + ($ks9e) + ($ks10e);   
-
+    $subtotal5 = ($ks1e) + ($ks2e) + ($ks3e)  + ($ks4e) + ($ks5e) + ($ks6e) + ($ks7e) + ($ks8e) + ($ks9e) + ($ks10e);
     $total = $subtotal1+$subtotal2+$subtotal3+$subtotal4+$subtotal5;
     $avarage = $total / 10;
-    
-    $id = $_SESSION[id];
-    $mhs_praktikan = mysql_query("SELECT * FROM mahasiswa where id = $id");
-    $row=  mysql_fetch_array($mhs_praktikan);
-    $jurusan = $row['jurusan']; 
-    
     /*$mhs = mysql_query("SELECT * FROM mahasiswa");
     $row = mysql_fetch_array($mhs);
     session_start();
@@ -416,11 +411,7 @@ else{
     $_SESSION['jurusan'] = $row['jurusan'];
     $id = $row[id];
     $jurusan = $row[jurusan];*/
-   
-    
-    
-    
-    mysql_query("INSERT INTO ks_nilaipraktikan(tahun_ajaran,jurusan,ks1a,ks1b,ks1c,ks1d,ks1e,
+    mysql_query("INSERT INTO ks_nilaipraktikan(Id_praktikan,jurusan,tahun_ajaran,ks1a,ks1b,ks1c,ks1d,ks1e,
                                                             ks2a,ks2b,ks2c,ks2d,ks2e,
                                                             ks3a,ks3b,ks3c,ks3d,ks3e,
                                                             ks4a,ks4b,ks4c,ks4d,ks4e,
@@ -432,7 +423,7 @@ else{
                                                             ks10a,ks10b,ks10c,ks10d,ks10e,
                                                             evaluasi,evaluasi2,evaluasi3,evaluasi4,evaluasi5,
                                                             subtotal1,subtotal2,subtotal3,subtotal4,subtotal5,total,avarage) 
-                 VALUES ('$tahun[year]','$jurusan','$ks1a','$ks1b','$ks1c','$ks1d','$ks1e',
+                 VALUES ('$nrp','$jurusan','$tahun[year]','$ks1a','$ks1b','$ks1c','$ks1d','$ks1e',
                                         '$ks2a','$ks2b','$ks2c','$ks2d','$ks2e',
                                         '$ks3a','$ks3b','$ks3c','$ks3d','$ks3e',
                                         '$ks4a','$ks4b','$ks4c','$ks4d','$ks4e',
@@ -447,4 +438,6 @@ else{
    
     $_SESSION['pesan'] = 'Pengisian Kuisoner Anda Telah Digunakan!';
     header("location:index.php");
+    echo "$nrp";
+    echo "$jurusan";
 ?>

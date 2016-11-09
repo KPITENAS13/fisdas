@@ -38,8 +38,33 @@ $r2 = mysql_fetch_array($q2);
                         <li><a href="info_jadwal_praktikum.php">Jadwal Praktikum</a></li>
                         <li><a href="arsip.php">Modul & Jobsheet</a></li>                        
                         <li><a href="praktikum.php">Praktikum</a></li>
-                        <li><a href="userP_evaluasikuesioner.php">Kuesioner Praktikan</a></li>
-                        <li><a href="userA_evaluasikuesioner.php">Kuesioner Asisten</a></li>
+                         <?php 
+                         include 'koneksi.php';
+                         $ks_praktikan = mysql_query("SELECT * FROM ks_nilaipraktikan WHERE Id_praktikan = $nrp ");
+                         $row_ksP = mysql_fetch_array($ks_praktikan); 
+                         $id_ksP = $row_ksP['Id_praktikan'];
+                         
+                         $ks_asisten = mysql_query("SELECT * FROM ks_nilaiasisten WHERE Id_asisten = $nrp");
+                         $row_ksA = mysql_fetch_array($ks_asisten); 
+                         $id_ksA = $row_ksA['Id_asisten'];
+                         
+                         if($nrp = $id_ksP){
+                             echo "<li><a href='index.php'>Kuesioner Praktikan
+                                       
+                                    </a><script >
+                                            alert('Maaf hak angket kuesioner anda telah digunakan!');
+                                
+                                       </script></li>";
+                         } else{
+                             echo "<li><a href='userP_evaluasikuesioner.php'>Kuesioner Praktikan</a></li> ";
+                         }
+                         if($nrp == $id_ksA){
+                             echo "<li><a href='userA_evaluasikuesioner.php' disabled>Kuesioner Asisten</a></li>";
+                         } else{
+                             echo "<li><a href='userA_evaluasikuesioner.php'>Kuesioner Asisten</a></li>";
+                         }
+                         ?>
+                        <!--<li><a href="userP_evaluasikuesioner.php">Kuesioner Praktikan</a></li>-->
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -122,3 +147,4 @@ $r2 = mysql_fetch_array($q2);
         </div>
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+

@@ -135,9 +135,40 @@ $_SESSION['pesan'] = '';
         <li><a href="praktikum.php"><i class="menu-icon icon-lightbulb"></i> Kepala Laboratorium </a></li>
         <li><a href="admin_info_jadwal_praktikum.php"><i class="menu-icon icon-table"></i> Jadwal Praktikum </a></li>
         <li><a href="admin_info_topik_TA.php"><i class="menu-icon icon-list-alt"></i> Topik TA </a></li>
-        <li><a href="admin_dataevaluasikuesionerP.php?id_ksnilai=1"><i class="menu-icon icon-list-alt"></i> Evaluasi & Kuesioner Praktikan </a></li>
-        <li><a href="admin_dataevaluasikuesionerA.php?id_ksnilai=1"><i class="menu-icon icon-list-alt"></i> Evaluasi & Kuesioner Asisten </a></li>
+        <li>
+            <a class="collapsed" data-toggle="collapse" href="#togglePages5">
+                <i class="menu-icon icon-book"></i>
+                <i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right"></i>
+                Evaluasi & Kuesioner
+            </a>
+            <ul id="togglePages5" class="collapse unstyled">
+                <li>
+                    <a href="admin_dataevaluasikuesionerP.php?id_ksnilai=1.php">
+                        <i class="icon-check"></i>
+                        Data Evaluasi & Kuesioner Praktikan
+                    </a>
+                </li>
+                <li>
+                    <a href="grafik_perhitungankuesionerP.php">
+                        <i class="icon-check"></i>
+                        Grafik Evaluasi & Kuesioner Praktikan
+                    </a>
+                </li>
+                <li>
+                    <a href="admin_dataevaluasikuesionerA.php?id_ksnilai=1.php">
+                        <i class="icon-check"></i>
+                        Data Evaluasi & Kuesioner Asisten
+                    </a>
+                </li>
+                <li>
+                    <a href="grafik_perhitungankuesionerA.php">
+                        <i class="icon-check"></i>
+                        Grafik Evaluasi & Kuesioner Asisten
+                    </a>
+                </li>
+            </ul>
 
+        </li>
     </ul>
     <!--/.widget-nav-->
     <ul class="widget widget-menu unstyled">

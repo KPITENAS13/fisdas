@@ -65,14 +65,12 @@ session_start();
                                       <th width="50%"><center>Saran dan Catatan</center></th>
                                     </tr>
                                   </thead>
-                                  
-                                  
                                   <tbody>
 
                                   <?php
                                   error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-                                  $id = $_GET['id_ksnilai'];
                                   include "koneksi.php";
+                                  $id = $_GET['id_ksnilai'];
                                   $tampil = mysql_query("select * from ks_nilaipraktikan where id_ksnilai = $id");
                                   $tampil1 = mysql_query("select * from kuisoner_praktikan where id_kp = 'KP001'");
                                   $tampil2 = mysql_query("select * from kuisoner_praktikan where id_kp = 'KP002'");
@@ -97,7 +95,6 @@ session_start();
                                   $r9 = mysql_fetch_array($tampil9);
                                   $r10 = mysql_fetch_array($tampil10);
                                   
-
                                     if($r['ks1a']==0){
                                         $r['ks1a']='';
                                     }else{
@@ -358,8 +355,6 @@ session_start();
                                         $r['ks10e']=$r['ks10e'];
                                     }
 
-
-
                                    echo"<tr>
                                       <th colspan='6'>$r1[jenis_kuisoner]</th>
                                       <td rowspan='5'>- Praktikan membutuhkan contoh kode program di modul<br>
@@ -556,8 +551,7 @@ session_start();
                                      </tbody>
                                 </table>
                                 <br>";
-                             
-
+                                   
                                 echo "<div class='control-group'>";
                                 $tampil_id = mysql_query("select count(*) as total from ks_nilaipraktikan");
                                 $r_id = mysql_fetch_array($tampil_id);
@@ -590,26 +584,14 @@ session_start();
                                     "; 
                                 }
                                 echo "</div>";
-                                    ?>                                  
-
-                                    
-                                    
-                                  
+                                    ?>                                                                    
                                   </tbody>
                                 </table>
                                 <br>
-                                 
-
-                            
                                 <!-- <hr /> -->
                                 <br />
-
-                            
                             </div>
-
-                            
                             </div>
-
                             <!--/.module-->
                         </div>
                         <!--/.content-->

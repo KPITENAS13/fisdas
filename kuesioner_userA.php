@@ -393,6 +393,11 @@ else{
  <?php
     session_start();
     include koneksi.php;
+    $nrp = '';
+    $nrp = $_SESSION['kode'];
+    $mhs_asisten = mysql_query("SELECT * FROM asisten WHERE nrp = $nrp");
+    $row=  mysql_fetch_array($mhs_asisten);
+    $periode = $row['periode'];
     $tahun = getdate();                         
     $subtotal1 = ($ks1a) + ($ks2a) + ($ks3a)  + ($ks4a) + ($ks5a) + ($ks6a) + ($ks7a) + ($ks8a) + ($ks9a) + ($ks10a);
     $subtotal2 = ($ks1b) + ($ks2b) + ($ks3b)  + ($ks4b) + ($ks5b) + ($ks6b) + ($ks7b) + ($ks8b) + ($ks9b) + ($ks10b);
@@ -403,7 +408,7 @@ else{
     $total = $subtotal1+$subtotal2+$subtotal3+$subtotal4+$subtotal5;
     $avarage = $total / 10;
 
-    mysql_query("INSERT INTO ks_nilaiasisten(ks1a,ks1b,ks1c,ks1d,ks1e,
+    mysql_query("INSERT INTO ks_nilaiasisten(Id_asisten,periode,tahun_ajaran,ks1a,ks1b,ks1c,ks1d,ks1e,
                                                             ks2a,ks2b,ks2c,ks2d,ks2e,
                                                             ks3a,ks3b,ks3c,ks3d,ks3e,
                                                             ks4a,ks4b,ks4c,ks4d,ks4e,
@@ -415,7 +420,7 @@ else{
                                                             ks10a,ks10b,ks10c,ks10d,ks10e,
                                                             evaluasi,evaluasi2,evaluasi3,evaluasi4,evaluasi5,
                                                             subtotal1,subtotal2,subtotal3,subtotal4,subtotal5,total,avarage) 
-                 VALUES ('$ks1a','$ks1b','$ks1c','$ks1d','$ks1e',
+                 VALUES ('$nrp','$periode','$tahun[year]','$ks1a','$ks1b','$ks1c','$ks1d','$ks1e',
                                         '$ks2a','$ks2b','$ks2c','$ks2d','$ks2e',
                                         '$ks3a','$ks3b','$ks3c','$ks3d','$ks3e',
                                         '$ks4a','$ks4b','$ks4c','$ks4d','$ks4e',

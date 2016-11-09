@@ -52,31 +52,43 @@ session_start();
             </div>
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1 wow fadeInDown" data-wow-delay="300ms">
-                        <div class="module">
-                            <div class="module-body">              
-                                <table class="table table-striped table-bordered table-condensed">
-                                  <thead>
+                    <div class="module">
+                        <div class="module-body">         
+                            <h3><b>Petunjuk Pengisian Evaluasi & Kuesioner Praktikan</b></h3>
+                            <p> Beri tanda silang  atau check   pada pilihan jawaban atas pertanyaan yang diberikan
+                                serta isikan saran & catatan mengenai evaluasi & kuesioner praktikan sesuai dengan penilaian Anda.
+                                Indeks standar penilaian kuesioner yang diberikan yaitu :
+                                <b> Sangat Kurang = 1, 
+                                    Kurang        = 2,
+                                    Cukup         = 3,
+                                    Baik          = 4,
+                                    Sangat Baik   = 5
+                                </b>
+                            </p>
+                            <br>
+                            <table class="table table-striped table-bordered table-condensed">
+                                <thead>
                                     <tr>
-                                      <th>PRAKTIKAN</th>
-                                      <th width="3%"><center>1</center></th>
-                                      <th width="3%"><center>2</center></th>
-                                      <th width="3%"><center>3</center></th>
-                                      <th width="3%"><center>4</center></th>
-                                      <th width="3%"><center>5</center></th>
-                                      <th width="50%"><center>Saran dan Catatan</center></th>
-                                    </tr>
-                                  </thead>
-                                                     
-                                  <tbody>
-                            <?php
-                            include "koneksi.php";
-                            $tampil = mysql_query("select * from kuisoner_praktikan where id_kp = 'KP001'");
-                            while ($r = mysql_fetch_array($tampil)) {
-                                echo"
+                                        <th>PRAKTIKAN</th>
+                                        <th width="3%"><center>1</center></th>
+                                <th width="3%"><center>2</center></th>
+                                <th width="3%"><center>3</center></th>
+                                <th width="3%"><center>4</center></th>
+                                <th width="3%"><center>5</center></th>
+                                <th width="50%"><center>Saran dan Catatan</center></th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                    <?php
+                                    include "koneksi.php";
+                                    $tampil = mysql_query("select * from kuisoner_praktikan where id_kp = 'KP001'");
+                                    while ($r = mysql_fetch_array($tampil)) {
+                                        echo"
                                 <form class='form-horizontal' role='form' name=form action='kuesioner_userP.php' method='post'>
                                     <tr>
                                       <th colspan='6'>$r[jenis_kuisoner]</th>
-                                      <td rowspan='5'><textarea class='span8' name='evaluasi' rows='6' style='width:600px' required></textarea></td>
+                                      <td rowspan='5'><textarea class='span8' name='evaluasi' rows='6' style='width:600px' placeholder ='Masukkan Saran dan Catatan Modul' required></textarea></td>
                                     </tr>
                                     
                                     <tr>
@@ -94,10 +106,10 @@ session_start();
 
                                     </tr>";
                                     }
-                                    
-                            $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP002'");
-                            while ($r = mysql_fetch_array($tampil)) {
-                                echo"
+
+                                    $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP002'");
+                                    while ($r = mysql_fetch_array($tampil)) {
+                                        echo"
                                     <tr>
                                       <td scope='col'>$r[kuisoner]</td>
                                       <td align=center scope='col'><input type='radio' name='ks2' onclick='displayResult2a(this.value)' id='optionsRadios' value='1' required></td>
@@ -112,11 +124,11 @@ session_start();
                                       <input type='hidden' name='ks2e' id='rs2e'>                                      
                                     
                                     </tr>";
-                            }
-                            
-                            $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP003'");
-                            while ($r = mysql_fetch_array($tampil)) {
-                                echo"
+                                    }
+
+                                    $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP003'");
+                                    while ($r = mysql_fetch_array($tampil)) {
+                                        echo"
                                     <tr>
                                       <td scope='col'>$r[kuisoner]</td>
                                       <td align=center scope='col'><input type='radio' name='ks3' onclick='displayResult3a(this.value)' id='optionsRadios' value='1' required></td>
@@ -130,10 +142,10 @@ session_start();
                                       <input type='hidden' name='ks3d' id='rs3d'>
                                       <input type='hidden' name='ks3e' id='rs3e'>
                                     </tr>";
-                            }
-                            $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP004'");
-                            while ($r = mysql_fetch_array($tampil)) {
-                                echo"
+                                    }
+                                    $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP004'");
+                                    while ($r = mysql_fetch_array($tampil)) {
+                                        echo"
                                     <tr>
                                       <td scope='col'>$r[kuisoner]</td>
                                       <td align=center scope='col'><input type='radio' name='ks4' onclick='displayResult4a(this.value)' id='optionsRadios' value='1' required></td>
@@ -158,13 +170,13 @@ session_start();
                                       <td scope='col'>&nbsp;</td>
                                       <td scope='col'>&nbsp;</td>
                                     </tr>";
-                            }
-                            $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP005'");
-                            while ($r = mysql_fetch_array($tampil)) {
-                                echo"
+                                    }
+                                    $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP005'");
+                                    while ($r = mysql_fetch_array($tampil)) {
+                                        echo"
                                     <tr>
                                       <th colspan='6'>$r[jenis_kuisoner]</th>
-                                      <td rowspan='3'><textarea class='span8' name='evaluasi2' rows='5' style='width:600px' required></textarea></td>
+                                      <td rowspan='3'><textarea class='span8' name='evaluasi2' rows='5' style='width:600px' placeholder ='Masukkan Saran dan Catatan Peralatan dan Fasilitas' required></textarea></td>
                                     </tr>
                                     
                                     <tr>
@@ -181,10 +193,10 @@ session_start();
                                       <input type='hidden' name='ks5e' id='rs5e'>
                                       
                                     </tr>";
-                            }
-                            $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP006'");
-                            while ($r = mysql_fetch_array($tampil)) {
-                                echo"
+                                    }
+                                    $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP006'");
+                                    while ($r = mysql_fetch_array($tampil)) {
+                                        echo"
                                     <tr>
                                       <td scope='col'>$r[kuisoner]</td>
                                       <td align=center scope='col'><input type='radio' name='ks6' onclick='displayResult6a(this.value)' id='optionsRadios' value='1' required></td>
@@ -209,13 +221,13 @@ session_start();
                                       <td scope='col'>&nbsp;</td>
                                       <td scope='col'>&nbsp;</td>
                                     </tr>";
-                            }
-                            $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP007'");
-                            while ($r = mysql_fetch_array($tampil)) {
-                                echo"
+                                    }
+                                    $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP007'");
+                                    while ($r = mysql_fetch_array($tampil)) {
+                                        echo"
                                       <tr>
                                       <th colspan='6'>$r[jenis_kuisoner]</th>
-                                      <td rowspan='3'><textarea class='span8' name='evaluasi3' rows='5' style='width:600px' required></textarea></td>
+                                      <td rowspan='3'><textarea class='span8' name='evaluasi3' rows='5' style='width:600px' placeholder ='Masukkan Saran dan Catatan Asisten' required></textarea></td>
                                      </tr>
                                     
                                     <tr>
@@ -231,10 +243,10 @@ session_start();
                                       <input type='hidden' name='ks7d' id='rs7d'>
                                       <input type='hidden' name='ks7e' id='rs7e'>
                                     </tr>";
-                            }
-                            $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP008'");
-                            while ($r = mysql_fetch_array($tampil)) {
-                                echo"
+                                    }
+                                    $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP008'");
+                                    while ($r = mysql_fetch_array($tampil)) {
+                                        echo"
                                     
                                     <tr>
                                       <td scope='col'>$r[kuisoner]</td>
@@ -260,14 +272,14 @@ session_start();
                                       <td scope='col'>&nbsp;</td>
                                       
                                     </tr>";
-                            }
-                            
-                            $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP009'");
-                            while ($r = mysql_fetch_array($tampil)) {
-                                echo"
+                                    }
+
+                                    $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP009'");
+                                    while ($r = mysql_fetch_array($tampil)) {
+                                        echo"
                                       <tr>
                                       <th colspan='6'>$r[jenis_kuisoner]</th>
-                                      <td rowspan='2'><textarea class='span8' name='evaluasi4' rows='5' style='width:600px' required></textarea></td>
+                                      <td rowspan='2'><textarea class='span8' name='evaluasi4' rows='5' style='width:600px' placeholder ='Masukkan Saran dan Catatan Waktu dan Jumlah Pertemuan' required></textarea></td>
                                     </tr>
                                     
                                     <tr>
@@ -293,14 +305,14 @@ session_start();
                                       <td scope='col'>&nbsp;</td>
                                       <td scope='col'>&nbsp;</td>
                                     </tr>";
-                            }
-                            
-                            $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP010'");
-                            while ($r = mysql_fetch_array($tampil)) {
-                                echo"   
+                                    }
+
+                                    $tampil = mysql_query("select * from kuisoner_praktikan where id_kp ='KP010'");
+                                    while ($r = mysql_fetch_array($tampil)) {
+                                        echo"   
                                      <tr>
                                       <th colspan='6'>$r[jenis_kuisoner]</th>
-                                      <td rowspan='2'><textarea class='span8' name='evaluasi5' rows='5' style='width:600px' required></textarea></td>
+                                      <td rowspan='2'><textarea class='span8' name='evaluasi5' rows='5' style='width:600px' placeholder ='Masukkan Saran dan Catatan Pelayanan dan Manajemen' required></textarea></td>
                                     </tr>
                                     
                                     <tr>
@@ -338,26 +350,24 @@ session_start();
                                  </div>
                                     
                                     </form>";
-                                    
-                            }
-                            
-                            ?>
-                                    
-                                
-                                 <!--<div class='control-group'>
-                                            <div class='controls'>
-                                                <button type='submit' class='btn-large table'>Submit</button>
-                                            </div>
-                                 </div>
-                              -->
+                                    }
+                                    ?>
+
+
+                                    <!--<div class='control-group'>
+                                               <div class='controls'>
+                                                   <button type='submit' class='btn-large table'>Submit</button>
+                                               </div>
+                                    </div>
+                                    -->
 
                                 <br />
                                 <!-- <hr /> -->
                                 <br />
 
-                            
-                            </div>
-                        </div><!--/.module-->
+
+                        </div>
+                    </div><!--/.module-->
 
                     <br />
 
@@ -384,371 +394,371 @@ session_start();
             });
         </script>
         <script>
-function displayResult1a(ks1){
-document.getElementById("rs1a").value=ks1;
-document.getElementById("rs1b").value=null;
-document.getElementById("rs1c").value=null;
-document.getElementById("rs1d").value=null;
-document.getElementById("rs1e").value=null;
-}
-function displayResult1b(ks1){
-document.getElementById("rs1a").value=null;
-document.getElementById("rs1b").value=ks1;
-document.getElementById("rs1c").value=null;
-document.getElementById("rs1d").value=null;
-document.getElementById("rs1e").value=null;
-}
-function displayResult1c(ks1){
-document.getElementById("rs1a").value=null;
-document.getElementById("rs1b").value=null;
-document.getElementById("rs1c").value=ks1;
-document.getElementById("rs1d").value=null;
-document.getElementById("rs1e").value=null;
-}
-function displayResult1d(ks1){
-document.getElementById("rs1a").value=null;
-document.getElementById("rs1b").value=null;
-document.getElementById("rs1c").value=null;
-document.getElementById("rs1d").value=ks1;
-document.getElementById("rs1e").value=null;
-}
-function displayResult1e(ks1){
-document.getElementById("rs1a").value=null;
-document.getElementById("rs1b").value=null;
-document.getElementById("rs1c").value=null;
-document.getElementById("rs1d").value=null;
-document.getElementById("rs1e").value=ks1;
-}
+            function displayResult1a(ks1) {
+                document.getElementById("rs1a").value = ks1;
+                document.getElementById("rs1b").value = null;
+                document.getElementById("rs1c").value = null;
+                document.getElementById("rs1d").value = null;
+                document.getElementById("rs1e").value = null;
+            }
+            function displayResult1b(ks1) {
+                document.getElementById("rs1a").value = null;
+                document.getElementById("rs1b").value = ks1;
+                document.getElementById("rs1c").value = null;
+                document.getElementById("rs1d").value = null;
+                document.getElementById("rs1e").value = null;
+            }
+            function displayResult1c(ks1) {
+                document.getElementById("rs1a").value = null;
+                document.getElementById("rs1b").value = null;
+                document.getElementById("rs1c").value = ks1;
+                document.getElementById("rs1d").value = null;
+                document.getElementById("rs1e").value = null;
+            }
+            function displayResult1d(ks1) {
+                document.getElementById("rs1a").value = null;
+                document.getElementById("rs1b").value = null;
+                document.getElementById("rs1c").value = null;
+                document.getElementById("rs1d").value = ks1;
+                document.getElementById("rs1e").value = null;
+            }
+            function displayResult1e(ks1) {
+                document.getElementById("rs1a").value = null;
+                document.getElementById("rs1b").value = null;
+                document.getElementById("rs1c").value = null;
+                document.getElementById("rs1d").value = null;
+                document.getElementById("rs1e").value = ks1;
+            }
 
 
-function displayResult2a(ks2){
-document.getElementById("rs2a").value=ks2;
-document.getElementById("rs2b").value=null;
-document.getElementById("rs2c").value=null;
-document.getElementById("rs2d").value=null;
-document.getElementById("rs2e").value=null;
-}
-function displayResult2b(ks2){
-document.getElementById("rs2a").value=null;
-document.getElementById("rs2b").value=ks2;
-document.getElementById("rs2c").value=null;
-document.getElementById("rs2d").value=null;
-document.getElementById("rs2e").value=null;
-}
-function displayResult2c(ks2){
-document.getElementById("rs2a").value=null;
-document.getElementById("rs2b").value=null;
-document.getElementById("rs2c").value=ks2;
-document.getElementById("rs2d").value=null;
-document.getElementById("rs2e").value=null;
-}
-function displayResult2d(ks2){
-document.getElementById("rs2a").value=null;
-document.getElementById("rs2b").value=null;
-document.getElementById("rs2c").value=null;
-document.getElementById("rs2d").value=ks2;
-document.getElementById("rs2e").value=null;
-}
-function displayResult2e(ks2){
-document.getElementById("rs2a").value=null;
-document.getElementById("rs2b").value=null;
-document.getElementById("rs2c").value=null;
-document.getElementById("rs2d").value=null;
-document.getElementById("rs2e").value=ks2;
-}
+            function displayResult2a(ks2) {
+                document.getElementById("rs2a").value = ks2;
+                document.getElementById("rs2b").value = null;
+                document.getElementById("rs2c").value = null;
+                document.getElementById("rs2d").value = null;
+                document.getElementById("rs2e").value = null;
+            }
+            function displayResult2b(ks2) {
+                document.getElementById("rs2a").value = null;
+                document.getElementById("rs2b").value = ks2;
+                document.getElementById("rs2c").value = null;
+                document.getElementById("rs2d").value = null;
+                document.getElementById("rs2e").value = null;
+            }
+            function displayResult2c(ks2) {
+                document.getElementById("rs2a").value = null;
+                document.getElementById("rs2b").value = null;
+                document.getElementById("rs2c").value = ks2;
+                document.getElementById("rs2d").value = null;
+                document.getElementById("rs2e").value = null;
+            }
+            function displayResult2d(ks2) {
+                document.getElementById("rs2a").value = null;
+                document.getElementById("rs2b").value = null;
+                document.getElementById("rs2c").value = null;
+                document.getElementById("rs2d").value = ks2;
+                document.getElementById("rs2e").value = null;
+            }
+            function displayResult2e(ks2) {
+                document.getElementById("rs2a").value = null;
+                document.getElementById("rs2b").value = null;
+                document.getElementById("rs2c").value = null;
+                document.getElementById("rs2d").value = null;
+                document.getElementById("rs2e").value = ks2;
+            }
 
 
-function displayResult3a(ks3){
-document.getElementById("rs3a").value=ks3;
-document.getElementById("rs3b").value=null;
-document.getElementById("rs3c").value=null;
-document.getElementById("rs3d").value=null;
-document.getElementById("rs3e").value=null;
-}
-function displayResult3b(ks3){
-document.getElementById("rs3a").value=null;
-document.getElementById("rs3b").value=ks3;
-document.getElementById("rs3c").value=null;
-document.getElementById("rs3d").value=null;
-document.getElementById("rs3e").value=null;
-}
-function displayResult3c(ks3){
-document.getElementById("rs3a").value=null;
-document.getElementById("rs3b").value=null;
-document.getElementById("rs3c").value=ks3;
-document.getElementById("rs3d").value=null;
-document.getElementById("rs3e").value=null;
-}
-function displayResult3d(ks3){
-document.getElementById("rs3a").value=null;
-document.getElementById("rs3b").value=null;
-document.getElementById("rs3c").value=null;
-document.getElementById("rs3d").value=ks3;
-document.getElementById("rs3e").value=null;
-}
-function displayResult3e(ks3){
-document.getElementById("rs3a").value=null;
-document.getElementById("rs3b").value=null;
-document.getElementById("rs3c").value=null;
-document.getElementById("rs3d").value=null;
-document.getElementById("rs3e").value=ks3;
-}
+            function displayResult3a(ks3) {
+                document.getElementById("rs3a").value = ks3;
+                document.getElementById("rs3b").value = null;
+                document.getElementById("rs3c").value = null;
+                document.getElementById("rs3d").value = null;
+                document.getElementById("rs3e").value = null;
+            }
+            function displayResult3b(ks3) {
+                document.getElementById("rs3a").value = null;
+                document.getElementById("rs3b").value = ks3;
+                document.getElementById("rs3c").value = null;
+                document.getElementById("rs3d").value = null;
+                document.getElementById("rs3e").value = null;
+            }
+            function displayResult3c(ks3) {
+                document.getElementById("rs3a").value = null;
+                document.getElementById("rs3b").value = null;
+                document.getElementById("rs3c").value = ks3;
+                document.getElementById("rs3d").value = null;
+                document.getElementById("rs3e").value = null;
+            }
+            function displayResult3d(ks3) {
+                document.getElementById("rs3a").value = null;
+                document.getElementById("rs3b").value = null;
+                document.getElementById("rs3c").value = null;
+                document.getElementById("rs3d").value = ks3;
+                document.getElementById("rs3e").value = null;
+            }
+            function displayResult3e(ks3) {
+                document.getElementById("rs3a").value = null;
+                document.getElementById("rs3b").value = null;
+                document.getElementById("rs3c").value = null;
+                document.getElementById("rs3d").value = null;
+                document.getElementById("rs3e").value = ks3;
+            }
 
 
-function displayResult4a(ks4){
-document.getElementById("rs4a").value=ks4;
-document.getElementById("rs4b").value=null;
-document.getElementById("rs4c").value=null;
-document.getElementById("rs4d").value=null;
-document.getElementById("rs4e").value=null;
-}
-function displayResult4b(ks4){
-document.getElementById("rs4a").value=null;
-document.getElementById("rs4b").value=ks4;
-document.getElementById("rs4c").value=null;
-document.getElementById("rs4d").value=null;
-document.getElementById("rs4e").value=null;
-}
-function displayResult4c(ks4){
-document.getElementById("rs4a").value=null;
-document.getElementById("rs4b").value=null;
-document.getElementById("rs4c").value=ks4;
-document.getElementById("rs4d").value=null;
-document.getElementById("rs4e").value=null;
-}
-function displayResult4d(ks4){
-document.getElementById("rs4a").value=null;
-document.getElementById("rs4b").value=null;
-document.getElementById("rs4c").value=null;
-document.getElementById("rs4d").value=ks4;
-document.getElementById("rs4e").value=null;
-}
-function displayResult4e(ks4){
-document.getElementById("rs4a").value=null;
-document.getElementById("rs4b").value=null;
-document.getElementById("rs4c").value=null;
-document.getElementById("rs4d").value=null;
-document.getElementById("rs4e").value=ks4;
-}
+            function displayResult4a(ks4) {
+                document.getElementById("rs4a").value = ks4;
+                document.getElementById("rs4b").value = null;
+                document.getElementById("rs4c").value = null;
+                document.getElementById("rs4d").value = null;
+                document.getElementById("rs4e").value = null;
+            }
+            function displayResult4b(ks4) {
+                document.getElementById("rs4a").value = null;
+                document.getElementById("rs4b").value = ks4;
+                document.getElementById("rs4c").value = null;
+                document.getElementById("rs4d").value = null;
+                document.getElementById("rs4e").value = null;
+            }
+            function displayResult4c(ks4) {
+                document.getElementById("rs4a").value = null;
+                document.getElementById("rs4b").value = null;
+                document.getElementById("rs4c").value = ks4;
+                document.getElementById("rs4d").value = null;
+                document.getElementById("rs4e").value = null;
+            }
+            function displayResult4d(ks4) {
+                document.getElementById("rs4a").value = null;
+                document.getElementById("rs4b").value = null;
+                document.getElementById("rs4c").value = null;
+                document.getElementById("rs4d").value = ks4;
+                document.getElementById("rs4e").value = null;
+            }
+            function displayResult4e(ks4) {
+                document.getElementById("rs4a").value = null;
+                document.getElementById("rs4b").value = null;
+                document.getElementById("rs4c").value = null;
+                document.getElementById("rs4d").value = null;
+                document.getElementById("rs4e").value = ks4;
+            }
 
 
-function displayResult5a(ks5){
-document.getElementById("rs5a").value=ks5;
-document.getElementById("rs5b").value=null;
-document.getElementById("rs5c").value=null;
-document.getElementById("rs5d").value=null;
-document.getElementById("rs5e").value=null;
-}
-function displayResult5b(ks5){
-document.getElementById("rs5a").value=null;
-document.getElementById("rs5b").value=ks5;
-document.getElementById("rs5c").value=null;
-document.getElementById("rs5d").value=null;
-document.getElementById("rs5e").value=null;
-}
-function displayResult5c(ks5){
-document.getElementById("rs5a").value=null;
-document.getElementById("rs5b").value=null;
-document.getElementById("rs5c").value=ks5;
-document.getElementById("rs5d").value=null;
-document.getElementById("rs5e").value=null;
-}
-function displayResult5d(ks5){
-document.getElementById("rs5a").value=null;
-document.getElementById("rs5b").value=null;
-document.getElementById("rs5c").value=null;
-document.getElementById("rs5d").value=ks5;
-document.getElementById("rs5e").value=null;
-}
-function displayResult5e(ks5){
-document.getElementById("rs5a").value=null;
-document.getElementById("rs5b").value=null;
-document.getElementById("rs5c").value=null;
-document.getElementById("rs5d").value=null;
-document.getElementById("rs5e").value=ks5;
-}
+            function displayResult5a(ks5) {
+                document.getElementById("rs5a").value = ks5;
+                document.getElementById("rs5b").value = null;
+                document.getElementById("rs5c").value = null;
+                document.getElementById("rs5d").value = null;
+                document.getElementById("rs5e").value = null;
+            }
+            function displayResult5b(ks5) {
+                document.getElementById("rs5a").value = null;
+                document.getElementById("rs5b").value = ks5;
+                document.getElementById("rs5c").value = null;
+                document.getElementById("rs5d").value = null;
+                document.getElementById("rs5e").value = null;
+            }
+            function displayResult5c(ks5) {
+                document.getElementById("rs5a").value = null;
+                document.getElementById("rs5b").value = null;
+                document.getElementById("rs5c").value = ks5;
+                document.getElementById("rs5d").value = null;
+                document.getElementById("rs5e").value = null;
+            }
+            function displayResult5d(ks5) {
+                document.getElementById("rs5a").value = null;
+                document.getElementById("rs5b").value = null;
+                document.getElementById("rs5c").value = null;
+                document.getElementById("rs5d").value = ks5;
+                document.getElementById("rs5e").value = null;
+            }
+            function displayResult5e(ks5) {
+                document.getElementById("rs5a").value = null;
+                document.getElementById("rs5b").value = null;
+                document.getElementById("rs5c").value = null;
+                document.getElementById("rs5d").value = null;
+                document.getElementById("rs5e").value = ks5;
+            }
 
 
-function displayResult6a(ks6){
-document.getElementById("rs6a").value=ks6;
-document.getElementById("rs6b").value=null;
-document.getElementById("rs6c").value=null;
-document.getElementById("rs6d").value=null;
-document.getElementById("rs6e").value=null;
-}
-function displayResult6b(ks6){
-document.getElementById("rs6a").value=null;
-document.getElementById("rs6b").value=ks6;
-document.getElementById("rs6c").value=null;
-document.getElementById("rs6d").value=null;
-document.getElementById("rs6e").value=null;
-}
-function displayResult6c(ks6){
-document.getElementById("rs6a").value=null;
-document.getElementById("rs6b").value=null;
-document.getElementById("rs6c").value=ks6;
-document.getElementById("rs6d").value=null;
-document.getElementById("rs6e").value=null;
-}
-function displayResult6d(ks6){
-document.getElementById("rs6a").value=null;
-document.getElementById("rs6b").value=null;
-document.getElementById("rs6c").value=null;
-document.getElementById("rs6d").value=ks6;
-document.getElementById("rs6e").value=null;
-}
-function displayResult6e(ks6){
-document.getElementById("rs6a").value=null;
-document.getElementById("rs6b").value=null;
-document.getElementById("rs6c").value=null;
-document.getElementById("rs6d").value=null;
-document.getElementById("rs6e").value=ks6;
-}
+            function displayResult6a(ks6) {
+                document.getElementById("rs6a").value = ks6;
+                document.getElementById("rs6b").value = null;
+                document.getElementById("rs6c").value = null;
+                document.getElementById("rs6d").value = null;
+                document.getElementById("rs6e").value = null;
+            }
+            function displayResult6b(ks6) {
+                document.getElementById("rs6a").value = null;
+                document.getElementById("rs6b").value = ks6;
+                document.getElementById("rs6c").value = null;
+                document.getElementById("rs6d").value = null;
+                document.getElementById("rs6e").value = null;
+            }
+            function displayResult6c(ks6) {
+                document.getElementById("rs6a").value = null;
+                document.getElementById("rs6b").value = null;
+                document.getElementById("rs6c").value = ks6;
+                document.getElementById("rs6d").value = null;
+                document.getElementById("rs6e").value = null;
+            }
+            function displayResult6d(ks6) {
+                document.getElementById("rs6a").value = null;
+                document.getElementById("rs6b").value = null;
+                document.getElementById("rs6c").value = null;
+                document.getElementById("rs6d").value = ks6;
+                document.getElementById("rs6e").value = null;
+            }
+            function displayResult6e(ks6) {
+                document.getElementById("rs6a").value = null;
+                document.getElementById("rs6b").value = null;
+                document.getElementById("rs6c").value = null;
+                document.getElementById("rs6d").value = null;
+                document.getElementById("rs6e").value = ks6;
+            }
 
 
-function displayResult7a(ks7){
-document.getElementById("rs7a").value=ks7;
-document.getElementById("rs7b").value=null;
-document.getElementById("rs7c").value=null;
-document.getElementById("rs7d").value=null;
-document.getElementById("rs7e").value=null;
-}
-function displayResult7b(ks7){
-document.getElementById("rs7a").value=null;
-document.getElementById("rs7b").value=ks7;
-document.getElementById("rs7c").value=null;
-document.getElementById("rs7d").value=null;
-document.getElementById("rs7e").value=null;
-}
-function displayResult7c(ks7){
-document.getElementById("rs7a").value=null;
-document.getElementById("rs7b").value=null;
-document.getElementById("rs7c").value=ks7;
-document.getElementById("rs7d").value=null;
-document.getElementById("rs7e").value=null;
-}
-function displayResult7d(ks7){
-document.getElementById("rs7a").value=null;
-document.getElementById("rs7b").value=null;
-document.getElementById("rs7c").value=null;
-document.getElementById("rs7d").value=ks7;
-document.getElementById("rs7e").value=null;
-}
-function displayResult7e(ks7){
-document.getElementById("rs7a").value=null;
-document.getElementById("rs7b").value=null;
-document.getElementById("rs7c").value=null;
-document.getElementById("rs7d").value=null;
-document.getElementById("rs7e").value=ks7;
-}
+            function displayResult7a(ks7) {
+                document.getElementById("rs7a").value = ks7;
+                document.getElementById("rs7b").value = null;
+                document.getElementById("rs7c").value = null;
+                document.getElementById("rs7d").value = null;
+                document.getElementById("rs7e").value = null;
+            }
+            function displayResult7b(ks7) {
+                document.getElementById("rs7a").value = null;
+                document.getElementById("rs7b").value = ks7;
+                document.getElementById("rs7c").value = null;
+                document.getElementById("rs7d").value = null;
+                document.getElementById("rs7e").value = null;
+            }
+            function displayResult7c(ks7) {
+                document.getElementById("rs7a").value = null;
+                document.getElementById("rs7b").value = null;
+                document.getElementById("rs7c").value = ks7;
+                document.getElementById("rs7d").value = null;
+                document.getElementById("rs7e").value = null;
+            }
+            function displayResult7d(ks7) {
+                document.getElementById("rs7a").value = null;
+                document.getElementById("rs7b").value = null;
+                document.getElementById("rs7c").value = null;
+                document.getElementById("rs7d").value = ks7;
+                document.getElementById("rs7e").value = null;
+            }
+            function displayResult7e(ks7) {
+                document.getElementById("rs7a").value = null;
+                document.getElementById("rs7b").value = null;
+                document.getElementById("rs7c").value = null;
+                document.getElementById("rs7d").value = null;
+                document.getElementById("rs7e").value = ks7;
+            }
 
-function displayResult8a(ks8){
-document.getElementById("rs8a").value=ks8;
-document.getElementById("rs8b").value=null;
-document.getElementById("rs8c").value=null;
-document.getElementById("rs8d").value=null;
-document.getElementById("rs8e").value=null;
-}
-function displayResult8b(ks8){
-document.getElementById("rs8a").value=null;
-document.getElementById("rs8b").value=ks8;
-document.getElementById("rs8c").value=null;
-document.getElementById("rs8d").value=null;
-document.getElementById("rs8e").value=null;
-}
-function displayResult8c(ks8){
-document.getElementById("rs8a").value=null;
-document.getElementById("rs8b").value=null;
-document.getElementById("rs8c").value=ks8;
-document.getElementById("rs8d").value=null;
-document.getElementById("rs8e").value=null;
-}
-function displayResult8d(ks8){
-document.getElementById("rs8a").value=null;
-document.getElementById("rs8b").value=null;
-document.getElementById("rs8c").value=null;
-document.getElementById("rs8d").value=ks8;
-document.getElementById("rs8e").value=null;
-}
-function displayResult8e(ks8){
-document.getElementById("rs8a").value=null;
-document.getElementById("rs8b").value=null;
-document.getElementById("rs8c").value=null;
-document.getElementById("rs8d").value=null;
-document.getElementById("rs8e").value=ks8;
-}
+            function displayResult8a(ks8) {
+                document.getElementById("rs8a").value = ks8;
+                document.getElementById("rs8b").value = null;
+                document.getElementById("rs8c").value = null;
+                document.getElementById("rs8d").value = null;
+                document.getElementById("rs8e").value = null;
+            }
+            function displayResult8b(ks8) {
+                document.getElementById("rs8a").value = null;
+                document.getElementById("rs8b").value = ks8;
+                document.getElementById("rs8c").value = null;
+                document.getElementById("rs8d").value = null;
+                document.getElementById("rs8e").value = null;
+            }
+            function displayResult8c(ks8) {
+                document.getElementById("rs8a").value = null;
+                document.getElementById("rs8b").value = null;
+                document.getElementById("rs8c").value = ks8;
+                document.getElementById("rs8d").value = null;
+                document.getElementById("rs8e").value = null;
+            }
+            function displayResult8d(ks8) {
+                document.getElementById("rs8a").value = null;
+                document.getElementById("rs8b").value = null;
+                document.getElementById("rs8c").value = null;
+                document.getElementById("rs8d").value = ks8;
+                document.getElementById("rs8e").value = null;
+            }
+            function displayResult8e(ks8) {
+                document.getElementById("rs8a").value = null;
+                document.getElementById("rs8b").value = null;
+                document.getElementById("rs8c").value = null;
+                document.getElementById("rs8d").value = null;
+                document.getElementById("rs8e").value = ks8;
+            }
 
-function displayResult9a(ks9){
-document.getElementById("rs9a").value=ks9;
-document.getElementById("rs9b").value=null;
-document.getElementById("rs9c").value=null;
-document.getElementById("rs9d").value=null;
-document.getElementById("rs9e").value=null;
-}
-function displayResult9b(ks9){
-document.getElementById("rs9a").value=null;
-document.getElementById("rs9b").value=ks9;
-document.getElementById("rs9c").value=null;
-document.getElementById("rs9d").value=null;
-document.getElementById("rs9e").value=null;
-}
-function displayResult9c(ks9){
-document.getElementById("rs9a").value=null;
-document.getElementById("rs9b").value=null;
-document.getElementById("rs9c").value=ks9;
-document.getElementById("rs9d").value=null;
-document.getElementById("rs9e").value=null;
-}
-function displayResult9d(ks9){
-document.getElementById("rs9a").value=null;
-document.getElementById("rs9b").value=null;
-document.getElementById("rs9c").value=null;
-document.getElementById("rs9d").value=ks9;
-document.getElementById("rs9e").value=null;
-}
-function displayResult9e(ks9){
-document.getElementById("rs9a").value=null;
-document.getElementById("rs9b").value=null;
-document.getElementById("rs9c").value=null;
-document.getElementById("rs9d").value=null;
-document.getElementById("rs9e").value=ks9;
-}
+            function displayResult9a(ks9) {
+                document.getElementById("rs9a").value = ks9;
+                document.getElementById("rs9b").value = null;
+                document.getElementById("rs9c").value = null;
+                document.getElementById("rs9d").value = null;
+                document.getElementById("rs9e").value = null;
+            }
+            function displayResult9b(ks9) {
+                document.getElementById("rs9a").value = null;
+                document.getElementById("rs9b").value = ks9;
+                document.getElementById("rs9c").value = null;
+                document.getElementById("rs9d").value = null;
+                document.getElementById("rs9e").value = null;
+            }
+            function displayResult9c(ks9) {
+                document.getElementById("rs9a").value = null;
+                document.getElementById("rs9b").value = null;
+                document.getElementById("rs9c").value = ks9;
+                document.getElementById("rs9d").value = null;
+                document.getElementById("rs9e").value = null;
+            }
+            function displayResult9d(ks9) {
+                document.getElementById("rs9a").value = null;
+                document.getElementById("rs9b").value = null;
+                document.getElementById("rs9c").value = null;
+                document.getElementById("rs9d").value = ks9;
+                document.getElementById("rs9e").value = null;
+            }
+            function displayResult9e(ks9) {
+                document.getElementById("rs9a").value = null;
+                document.getElementById("rs9b").value = null;
+                document.getElementById("rs9c").value = null;
+                document.getElementById("rs9d").value = null;
+                document.getElementById("rs9e").value = ks9;
+            }
 
-function displayResult10a(ks10){
-document.getElementById("rs10a").value=ks10;
-document.getElementById("rs10b").value=null;
-document.getElementById("rs10c").value=null;
-document.getElementById("rs10d").value=null;
-document.getElementById("rs10e").value=null;
-}
-function displayResult10b(ks10){
-document.getElementById("rs10a").value=null;
-document.getElementById("rs10b").value=ks10;
-document.getElementById("rs10c").value=null;
-document.getElementById("rs10d").value=null;
-document.getElementById("rs10e").value=null;
-}
-function displayResult10c(ks10){
-document.getElementById("rs10a").value=null;
-document.getElementById("rs10b").value=null;
-document.getElementById("rs10c").value=ks10;
-document.getElementById("rs10d").value=null;
-document.getElementById("rs10e").value=null;
-}
-function displayResult10d(ks10){
-document.getElementById("rs10a").value=null;
-document.getElementById("rs10b").value=null;
-document.getElementById("rs10c").value=null;
-document.getElementById("rs10d").value=ks10;
-document.getElementById("rs10e").value=null;
-}
-function displayResult10e(ks10){
-document.getElementById("rs10a").value=null;
-document.getElementById("rs10b").value=null;
-document.getElementById("rs10c").value=null;
-document.getElementById("rs10d").value=null;
-document.getElementById("rs10e").value=ks10;
-}
-</script>
+            function displayResult10a(ks10) {
+                document.getElementById("rs10a").value = ks10;
+                document.getElementById("rs10b").value = null;
+                document.getElementById("rs10c").value = null;
+                document.getElementById("rs10d").value = null;
+                document.getElementById("rs10e").value = null;
+            }
+            function displayResult10b(ks10) {
+                document.getElementById("rs10a").value = null;
+                document.getElementById("rs10b").value = ks10;
+                document.getElementById("rs10c").value = null;
+                document.getElementById("rs10d").value = null;
+                document.getElementById("rs10e").value = null;
+            }
+            function displayResult10c(ks10) {
+                document.getElementById("rs10a").value = null;
+                document.getElementById("rs10b").value = null;
+                document.getElementById("rs10c").value = ks10;
+                document.getElementById("rs10d").value = null;
+                document.getElementById("rs10e").value = null;
+            }
+            function displayResult10d(ks10) {
+                document.getElementById("rs10a").value = null;
+                document.getElementById("rs10b").value = null;
+                document.getElementById("rs10c").value = null;
+                document.getElementById("rs10d").value = ks10;
+                document.getElementById("rs10e").value = null;
+            }
+            function displayResult10e(ks10) {
+                document.getElementById("rs10a").value = null;
+                document.getElementById("rs10b").value = null;
+                document.getElementById("rs10c").value = null;
+                document.getElementById("rs10d").value = null;
+                document.getElementById("rs10e").value = ks10;
+            }
+        </script>
     </body>
 </html>

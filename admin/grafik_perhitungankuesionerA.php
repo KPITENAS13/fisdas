@@ -52,7 +52,7 @@ session_start();
                         <div class="content">
                             <div class="module">
                             <div class="module-head">
-                                <h3><center>EVALUASI & KUISONER PRAKTIKAN LAB FISIKA DASAR ITENAS</center></h3>
+                                <h3><center>EVALUASI & KUISONER ASISTEN LAB FISIKA DASAR ITENAS</center></h3>
                             </div>
                             <div class="module-body">     
                                 
@@ -60,7 +60,7 @@ session_start();
                             <script src="js/highcharts.js" type="text/javascript"></script>
                             <script src="js/exporting.js" type="text/javascript"></script>
                             <script type="text/javascript">
-                                    var chart1; // globally available
+                            var chart1; // globally available
                             $(document).ready(function() {
                                   chart1 = new Highcharts.Chart({
                                      chart: {
@@ -68,10 +68,10 @@ session_start();
                                         type: 'column'
                                      },   
                                      title: {
-                                        text: 'Data Kuesioner Praktikan Laboratorium Fisika Dasar'
+                                        text: 'Data Kuesioner Asisten Laboratorium Fisika Dasar'
                                      },
                                      xAxis: {
-                                        categories: ['Jurusan']
+                                        categories: ['Periode']
                                      },
                                      yAxis: {
                                         title: {
@@ -89,23 +89,23 @@ session_start();
                             mysql_connect($server,$username,$password) or die("Koneksi gagal");
                             mysql_select_db($database) or die("Database tidak bisa dibuka");*/
                             include 'koneksi.php';
-                            $sql   = "SELECT jurusan from ks_nilaipraktikan GROUP BY jurusan"; // file untuk mengakses ke tabel database
+                            $sql   = "SELECT periode from ks_nilaiasisten GROUP BY periode"; // file untuk mengakses ke tabel database
                             $query = mysql_query( $sql ) or die(mysql_error());
 
                             while($ambil = mysql_fetch_array($query)){
                                     //$jurusan=$ambil['jurusan'];
-                                    $alljurusan = $ambil['jurusan'];
-                                    $sql_avarage   = "SELECT jurusan, AVG (avarage) AS avg_jur from ks_nilaipraktikan GROUP BY jurusan ='$alljurusan'";     
+                                    $allperiode = $ambil['periode'];
+                                    $sql_avarage   = "SELECT periode, AVG (avarage) AS avg_per from ks_nilaiasisten GROUP BY periode ='$allperiode'";     
 
                                     $query_avarage = mysql_query( $sql_avarage ) or die(mysql_error());
                                     while( $data = mysql_fetch_array( $query_avarage )){
-                                       $jumlahx = $data['avg_jur'];  
+                                       $jumlahx = $data['avg_per'];  
                                        //$alljurusan = $data['jurusan'];
                                       }             
 
                                       ?>
                                       {
-                                              name: '<?php echo $alljurusan; ?>',
+                                              name: '<?php echo $allperiode; ?>',
                                               data: [<?php echo $jumlahx; ?>]
                                       },
                                       <?php } ?>
